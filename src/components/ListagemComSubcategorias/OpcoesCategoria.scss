@@ -7,18 +7,15 @@
   color: $mp-components-color-primary-blue;
 }
 
-.criar {
+.opcao {
   padding-left: 20px;
-  cursor: pointer;
 }
 
-.editar {
-  padding-left: 20px;
-  cursor: pointer;
-}
-
-.excluir {
-  padding-left: 20px;
+.opcaoExcluir {
+  @extend .opcao;
   color: $mp-components-color-red;
+}
+
+.label {
   cursor: pointer;
 }

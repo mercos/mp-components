@@ -8,16 +8,16 @@ export default class OpcoesCategoria extends React.Component {
 
     return (
       <span className={styles.opcoesWrapper} style={{ visibility: visibilidade }}>
-        <span className={styles.criar}>
-          Criar subcategoria
+        <span className={styles.opcao}>
+          <span className={styles.label}>Criar subcategoria</span>
         </span>
 
-        <span className={styles.editar}>
-          Editar
+        <span className={styles.opcao}>
+          <span className={styles.label}>Editar</span>
         </span>
 
-        <span className={styles.excluir}>
-          Excluir
+        <span className={styles.opcaoExcluir}>
+          <span className={styles.label}>Excluir</span>
         </span>
       </span>
     )
