@@ -32,6 +32,18 @@ export default class Categoria extends React.Component {
     )
   }
 
+  handleCriar() {
+    console.log('Criou')
+  }
+
+  handleEditar() {
+    console.log('Editou')
+  }
+
+  handleExcluir() {
+    console.log('Excluiu')
+  }
+
   render() {
     let categoriaStyle = styles.categoriaNivel1
     if (this.props.nivel === 2) {
@@ -48,7 +60,12 @@ export default class Categoria extends React.Component {
           onMouseOut={this.handlerMouseOut}
         >
           <span className={styles.labelCategoria}>{this.props.nome}</span>
-          <OpcoesCategoria exibir={this.state.exibirOpcoes} />
+          <OpcoesCategoria
+            handlerCriar={this.handleCriar}
+            handlerEditar={this.handleEditar}
+            handlerExcluir={this.handleExcluir}
+            exibir={this.state.exibirOpcoes}
+          />
         </div>
         {this.obterSubcategoria(this.props.nivel)}
       </div>
