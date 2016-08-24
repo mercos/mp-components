@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/meuspedidos/mp-components.git"
   },
-  "author": "Jon Welzel <jnwelzel@gmail.com>",
+  "author": "Meus Pedidos <dev@meuspedidos.com.br>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/meuspedidos/mp-components/issues"
