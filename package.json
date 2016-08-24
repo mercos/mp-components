@@ -1,0 +1,38 @@
+{
+  "name": "mp-components",
+  "version": "1.0.0",
+  "description": "Meus Pedidos React components and style guide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 9001 -s ./public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meuspedidos/mp-components.git"
+  },
+  "author": "Jon Welzel <jnwelzel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/meuspedidos/mp-components/issues"
+  },
+  "homepage": "https://github.com/meuspedidos/mp-components#readme",
+  "devDependencies": {
+    "@kadira/storybook": "^2.5.0",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "babel-preset-react": "^6.11.1",
+    "chai": "^3.5.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "mocha": "^3.0.2",
+    "node-sass": "^3.8.0",
+    "raw-loader": "^0.5.1",
+    "react": "^15.3.1",
+    "react-addons-test-utils": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.2"
+  }
+}
