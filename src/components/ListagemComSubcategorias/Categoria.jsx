@@ -1,5 +1,6 @@
 import React from 'react'
 import OpcoesCategoria from './OpcoesCategoria.jsx'
+import styles from './Categoria.scss'
 
 export default class Categoria extends React.Component {
 
@@ -34,12 +35,17 @@ export default class Categoria extends React.Component {
     }
 
     render() {
-        let classeCategoria = `categoria-nivel-${this.props.nivel}`
+        let categoriaStyle = styles.categoriaNivel1
+        if(this.props.nivel == 2){
+            categoriaStyle = styles.categoriaNivel2
+        } else if(this.props.nivel >= 3) {
+            categoriaStyle = styles.categoriaNivel3
+        }
+
         return (
-            <div className={classeCategoria}>
-                <div onMouseOver={this.handlerMouseOver} onMouseOut={this.handlerMouseOut}>
-                    <span>{this.props.nome}</span>
-                    <span>{this.props.nivel}</span>
+            <div className={styles.categoriaContainer}>
+                <div className={categoriaStyle} onMouseOver={this.handlerMouseOver} onMouseOut={this.handlerMouseOut}>
+                    <span className={styles.labelCategoria}>{this.props.nome}</span>
                     <OpcoesCategoria exibir={this.state.exibirOpcoes}/>
                 </div>
                 {this.obterSubcategoria(this.props.nivel)}

@@ -1,0 +1,34 @@
+.categoriaContainer {
+  min-height: 40px;
+}
+
+.linhaCategoria {
+  height: 40px;
+  font-size: 14px;
+  padding: 10px 0 10px 20px;
+}
+
+.linhaCategoria:hover {
+  background-color: #f8f8f8;
+}
+
+.categoriaNivel1 {
+  @extend .linhaCategoria;
+  font-weight: 600;
+}
+
+.categoriaNivel2 {
+  @extend .linhaCategoria;
+  font-weight: 400;
+  padding-left: 40px;
+}
+
+.categoriaNivel3 {
+  @extend .linhaCategoria;
+  font-weight: 400;
+  padding-left: 60px;
+
+  .labelCategoria {
+    color: #a0a0a0;
+  }
+}
