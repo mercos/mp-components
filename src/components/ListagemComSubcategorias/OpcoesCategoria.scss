@@ -1,8 +1,10 @@
+@import "../../styles/variables";
+
 .opcoesWrapper {
   padding-left: 20px;
   font-size: 12px;
   font-weight: 400;
-  color: #0192f6;
+  color: $mp-components-color-primary-blue;
 }
 
 .criar {
@@ -17,6 +19,6 @@
 
 .excluir {
   padding-left: 20px;
-  color: #f75e5e;
+  color: $mp-components-color-red;
   cursor: pointer;
 }
