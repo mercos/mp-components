@@ -8,7 +8,9 @@
     "storybook": "start-storybook -p 9001 -s ./public",
     "clean": "rm -rf ./lib",
     "build": "npm run clean && ./node_modules/.bin/webpack",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src test"
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:js": "./node_modules/.bin/eslint --ext .js,.jsx src test",
+    "lint:sass": "./node_modules/.bin/sass-lint 'src/**/*.scss' --verbose --no-exit"
   },
   "repository": {
     "type": "git",
@@ -40,6 +42,7 @@
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
+    "sass-lint": "^1.9.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
