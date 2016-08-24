@@ -5,18 +5,15 @@
   color: #0192f6;
 }
 
-.criar {
+.opcao {
   padding-left: 20px;
-  cursor: pointer;
 }
 
-.editar {
-  padding-left: 20px;
-  cursor: pointer;
-}
-
-.excluir {
-  padding-left: 20px;
+.opcaoExcluir {
+  @extend .opcao;
   color: #f75e5e;
+}
+
+.label {
   cursor: pointer;
 }
