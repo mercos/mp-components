@@ -7,7 +7,19 @@ export default class OpcoesCategoria extends React.Component {
     const visibilidade = this.props.exibir ? 'visible' : 'hidden'
 
     return (
-      <span className={styles.opcoes} style={{ visibility: visibilidade }}>OpcoesCategoria</span>
+      <span className={styles.opcoesWrapper} style={{ visibility: visibilidade }}>
+        <span className={styles.criar}>
+          Criar subcategoria
+        </span>
+
+        <span className={styles.editar}>
+          Editar
+        </span>
+
+        <span className={styles.excluir}>
+          Excluir
+        </span>
+      </span>
     )
   }
 }

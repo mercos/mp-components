@@ -1,3 +1,22 @@
-.opcoes {
-  padding-left: 40px;
+.opcoesWrapper {
+  padding-left: 20px;
+  font-size: 12px;
+  font-weight: 400;
+  color: #0192f6;
+}
+
+.criar {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.editar {
+  padding-left: 20px;
+  cursor: pointer;
+}
+
+.excluir {
+  padding-left: 20px;
+  color: #f75e5e;
+  cursor: pointer;
 }
