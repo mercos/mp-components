@@ -7,8 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "start-storybook -p 9001 -s ./public",
     "clean": "rm -rf ./lib",
-    "build": "npm run clean && ./node_modules/.bin/webpack",
-    "lint": "./node_modules/.bin/eslint --ext .js,.jsx src test"
+    "build": "npm run clean && $(npm bin)/webpack",
+    "lint": "npm run lint:js && npm run lint:sass",
+    "lint:js": "$(npm bin)/eslint --ext .js,.jsx src test",
+    "lint:sass": "$(npm bin)/sass-lint 'src/**/*.scss' --verbose --no-exit",
+    "gh-pages:clean": "rm -rf _gh-pages",
+    "gh-pages:build": "$(npm bin)/build-storybook -o _gh-pages",
+    "gh-pages:copy-public": "cp public/* _gh-pages/$1",
+    "gh-pages:publish": "$(npm bin)/git-directory-deploy --directory _gh-pages",
+    "gh-pages": "npm run gh-pages:clean && npm run gh-pages:build && npm run gh-pages:copy-public && npm run gh-pages:publish"
   },
   "repository": {
     "type": "git",
@@ -34,12 +41,14 @@
     "eslint-plugin-jsx-a11y": "^2.1.0",
     "eslint-plugin-react": "^6.1.2",
     "extract-text-webpack-plugin": "^1.0.1",
+    "git-directory-deploy": "^1.5.1",
     "mocha": "^3.0.2",
     "node-sass": "^3.8.0",
     "raw-loader": "^0.5.1",
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
+    "sass-lint": "^1.9.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"
