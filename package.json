@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -s ./public"
+    "storybook": "start-storybook -p 9001 -s ./public",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && ./node_modules/.bin/webpack"
   },
   "repository": {
     "type": "git",
