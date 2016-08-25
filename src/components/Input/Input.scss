@@ -1,0 +1,39 @@
+@import "../../styles/variables";
+
+.input {
+  border: 1px solid $mp-components-color-input-border;
+  width: 100%;
+  border-radius: 4px;
+  transition: border-color linear 0.2s, box-shadow linear 0.2s;
+  color: $mp-components-text-color-default;
+  box-shadow: inset 0 1px 1px $mp-components-color-input-inset;
+  background-color: $mp-components-color-input-background;
+  outline: none;
+}
+
+.input.default:focus {
+  border-color: $mp-components-color-primary-light;
+  box-shadow: 0 0 8px rgba(82,168,236,.6);
+}
+
+.input.error {
+  border-color: $mp-components-color-error;
+}
+
+.input.small {
+  font-size: 10px;
+  padding: 4px 6px;
+  height: 26px;
+}
+
+.input.medium {
+  font-size: 12px;
+  padding: 4px 6px;
+  height: 30px;
+}
+
+.input.large {
+  font-size: 16px;
+  padding: 8px 10px;
+  height: 38px;
+}
