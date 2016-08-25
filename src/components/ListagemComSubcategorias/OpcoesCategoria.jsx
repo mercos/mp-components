@@ -9,15 +9,15 @@ export default class OpcoesCategoria extends React.Component {
     return (
       <span className={styles.opcoesWrapper} style={{ visibility: visibilidade }}>
         <span className={styles.opcao}>
-          <span className={styles.label}>Criar subcategoria</span>
+          <span onClick={this.props.handlerCriar} className={styles.label}>Criar subcategoria</span>
         </span>
 
         <span className={styles.opcao}>
-          <span className={styles.label}>Editar</span>
+          <span onClick={this.props.handlerEditar} className={styles.label}>Editar</span>
         </span>
 
         <span className={styles.opcaoExcluir}>
-          <span className={styles.label}>Excluir</span>
+          <span onClick={this.props.handlerExcluir} className={styles.label}>Excluir</span>
         </span>
       </span>
     )
@@ -26,4 +26,7 @@ export default class OpcoesCategoria extends React.Component {
 
 OpcoesCategoria.propTypes = {
   exibir: React.PropTypes.bool,
+  handlerCriar: React.PropTypes.func,
+  handlerEditar: React.PropTypes.func,
+  handlerExcluir: React.PropTypes.func,
 }
