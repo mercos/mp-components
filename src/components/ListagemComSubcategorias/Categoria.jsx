@@ -1,6 +1,6 @@
 import React from 'react'
 import OpcoesCategoria from './OpcoesCategoria.jsx'
-import AlertaInline from './AlertaInline.jsx'
+import InlineAlert from '../InlineAlert'
 import styles from './Categoria.scss'
 
 export default class Categoria extends React.Component {
@@ -19,6 +19,15 @@ export default class Categoria extends React.Component {
     this.handleCancelarExclusao = () => this.handlerCancelarExclusao()
   }
 
+  render() {
+    return (
+      <div className={styles.categoriaContainer}>
+        {this.obterLinha()}
+        {this.obterSubcategorias(this.props.nivel)}
+      </div>
+    )
+  }
+
   exibirOpcoesCategoria() {
     this.setState({ exibirOpcoes: true })
   }
@@ -30,18 +39,14 @@ export default class Categoria extends React.Component {
   obterLinha() {
     if (this.state.excluindoLinha === true) {
       return (
-        <AlertaInline
-          handleConfirmar={this.handleConfirmarExclusao}
-          handleCancelar={this.handleCancelarExclusao}
-        />
+        <InlineAlert context="error">
+          <span>
+            Tem certeza que deseja excluir '{this.props.nome}'? <a href="">SIM</a> | <a href="">NÃO</a>
+          </span>
+        </InlineAlert>
       )
     }
-    let categoriaStyle = styles.categoriaNivel1
-    if (this.props.nivel === 2) {
-      categoriaStyle = styles.categoriaNivel2
-    } else if (this.props.nivel >= 3) {
-      categoriaStyle = styles.categoriaNivel3
-    }
+    let categoriaStyle = styles[`categoriaNivel${this.props.nivel}`]
     return (
       <div
         className={categoriaStyle}
@@ -59,7 +64,7 @@ export default class Categoria extends React.Component {
     )
   }
 
-  obterSubcategoria(nivelAtual) {
+  obterSubcategorias(nivelAtual) {
     return this.props.subCategorias.map((subcategoria) =>
       <Categoria
         key={subcategoria.id}
@@ -98,15 +103,6 @@ export default class Categoria extends React.Component {
     )
 
     console.log('Cancelou exclusão da linha')
-  }
-
-  render() {
-    return (
-      <div className={styles.categoriaContainer}>
-        {this.obterLinha()}
-        {this.obterSubcategoria(this.props.nivel)}
-      </div>
-    )
   }
 
 }

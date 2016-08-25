@@ -5,30 +5,30 @@ import ListagemComSubcategoria from
   '../src/components/ListagemComSubcategorias/ListagemComSubcategorias.jsx'
 
 const dadosDefault = [
-  { id: 1, nome: 'Categoria' },
+  { id: 1, nome: 'Tablets' },
   {
     id: 2,
-    nome: 'Categoria 2',
+    nome: 'Smartphones',
     subcategorias: [
       { id: 3,
-        nome: 'Subcategoria 2-1',
+        nome: 'Apple',
         subcategorias: [
-          { id: 4, nome: 'Subcategoria 2-1-1' },
+          { id: 4, nome: 'iPhone 6S' },
         ],
       },
-      { id: 5, nome: 'Categoria 2-2' },
+      { id: 5, nome: 'Samsung' },
     ],
   },
 ]
 
-const semSubcategorias = [{ id: 1, nome: 'Categoria' }]
+const semSubcategorias = [{ id: 1, nome: 'Tablets' }]
 
 const rootCategoriasComSubcategoria = [
   {
     id: 1,
-    nome: 'Categoria',
+    nome: 'Smartphones',
     subcategorias: [
-      { id: 2, nome: 'Subcategoria 1' },
+      { id: 2, nome: 'Apple' },
     ],
   },
 ]
@@ -36,13 +36,13 @@ const rootCategoriasComSubcategoria = [
 const rootCategoriasCom2NiveisSubcategoria = [
   {
     id: 1,
-    nome: 'Categoria',
+    nome: 'Smartphones',
     subcategorias: [
       {
         id: 2,
-        nome: 'Subcategoria 1',
+        nome: 'Apple',
         subcategorias: [
-          { id: 3, nome: 'Subcategoria 1-1' },
+          { id: 3, nome: 'iPhone 6S' },
         ],
       },
     ],

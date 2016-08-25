@@ -1,9 +1,0 @@
-@import 'commons';
-@import '../../styles/variables';
-
-.linhaAlerta {
-  @extend .linhaCategoria;
-
-  background-color: $mp-components-color-red;
-  color: $mp-components-color-white;
-}
