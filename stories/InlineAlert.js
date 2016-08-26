@@ -5,8 +5,8 @@ import InlineAlert from '../src/components/InlineAlert'
 
 storiesOf('InlineAlert', module)
   .add('default', () => (
-    <InlineAlert>InlineAlert</InlineAlert>
+    <InlineAlert>Everything looking good here, carry on.</InlineAlert>
   ))
   .add('error', () => (
-    <InlineAlert context="error">InlineAlert</InlineAlert>
+    <InlineAlert context="error">Oh no! The Demogorgon in on the loose again.</InlineAlert>
   ))
