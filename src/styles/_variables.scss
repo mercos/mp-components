@@ -4,10 +4,12 @@ $mp-components-color-red: #f75e5e;
 $mp-components-color-green: #02CD78;
 $mp-components-color-green-dark: #02B469;
 $mp-components-color-gray-dark: #CCC;
+$mp-components-color-gray-light: #a0a0a0;
 $mp-components-color-gray-super-light: rgba(0, 0, 0, .075);
 $mp-components-color-black: #555;
 $mp-components-color-white: #ffffff;
 
+// Colors
 $mp-components-text-color-default: $mp-components-color-black;
 $mp-components-color-primary: $mp-components-color-blue;
 $mp-components-color-primary-light: $mp-components-color-blue-faded;
@@ -17,3 +19,7 @@ $mp-components-color-success-dark: $mp-components-color-green-dark;
 $mp-components-color-input-border: $mp-components-color-gray-dark;
 $mp-components-color-input-inset: $mp-components-color-gray-super-light;
 $mp-components-color-input-background: $mp-components-color-white;
+$mp-components-color-node-level-3: $mp-components-color-gray-light;
+
+// Spacing
+$mp-text-container-padding: 12px;

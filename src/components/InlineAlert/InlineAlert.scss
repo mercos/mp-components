@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .inlineAlert {
-  padding: 12px;
+  padding: $mp-text-container-padding;
 }
 
 .inlineAlert.default {

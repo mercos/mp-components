@@ -1,0 +1,20 @@
+@import "../../styles/variables";
+
+.link {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.link.decorated {
+  text-decoration: underline;
+}
+
+.link.default,
+.link.default:visited {
+  color: $mp-components-color-primary;
+}
+
+.link.error,
+.link.error:visited {
+  color: $mp-components-color-error;
+}

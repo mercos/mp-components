@@ -5,6 +5,8 @@ function loadStories() {
   require('../stories/ListagemComSubcategorias')
   require('../stories/Input')
   require('../stories/InlineAlert')
+  require('../stories/Link')
+  require('../stories/Node')
 }
 
 configure(loadStories, module)
