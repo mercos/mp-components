@@ -2,8 +2,55 @@
 
 .button {
   border: none;
-  padding: 5px;
-  border-radius: 4px;
-  background-color: $mp-components-color-primary;
-  color: #ffffff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button.medium {
+  font-size: $mp-components-font-size-medium;
+  padding: 10px 15px;
+}
+
+.button.success {
+  background-color: $mp-components-button-success-bg;
+  border: 1px solid $mp-components-button-success-border;
+  color: $mp-components-color-white;
+}
+
+.button.success:hover {
+  background-color: $mp-components-button-success-bg-hover;
+  border: 1px solid $mp-components-button-success-border-hover;
+}
+
+.button.info {
+  background-color: $mp-components-button-info-bg;
+  border: 1px solid $mp-components-button-info-border;
+  color: $mp-components-color-white;
+}
+
+.button.info:hover {
+  background-color: $mp-components-button-info-bg-hover;
+  border: 1px solid $mp-components-button-info-border-hover;
+}
+
+.button.default {
+  background-color: $mp-components-button-default-bg;
+  border: 1px solid $mp-components-button-default-border;
+  color: $mp-components-color-black;
+}
+
+.button.default:hover {
+  background-color: $mp-components-button-default-bg-hover;
+  border: 1px solid $mp-components-button-default-border-hover;
+}
+
+.button.error {
+  background-color: $mp-components-button-error-bg;
+  border: 1px solid $mp-components-button-error-border;
+  color: $mp-components-color-white;
+}
+
+.button.error:hover {
+  background-color: $mp-components-button-error-bg-hover;
+  border: 1px solid $mp-components-button-error-border-hover;
 }

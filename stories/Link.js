@@ -17,11 +17,11 @@ storiesOf('Link', module)
   ))
 
   .add('with font icon', () => (
-    <Link fontIconClass="ion-ios-plus">Font icon</Link>
+    <Link><i className="ion-plus-round" /> Font icon</Link>
   ))
 
   .add('decorated with font icon', () => (
-    <Link decorated={true} fontIconClass="ion-ios-plus">Decorated font icon</Link>
+    <Link decorated={true}><i className="ion-plus-round" /> Decorated font icon</Link>
   ))
 
   .add('with onClick action', () => (

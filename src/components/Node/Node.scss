@@ -1,15 +1,16 @@
 @import "../../styles/variables";
 
 .node {
-  padding: $mp-text-container-padding;
+  padding: $mp-components-text-container-padding;
 }
 
 .node:hover {
-  background-color: #f8f8f8;
+  background-color: $mp-components-color-node-hover;
 }
 
 .nodeLevel1 {
   padding-left: 20px;
+  border-top: 1px solid $mp-components-color-gray-super-light;
 
   .nodeLabel {
     font-weight: 600;

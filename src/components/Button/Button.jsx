@@ -1,15 +1,30 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
+import cx from 'classnames'
 import styles from './Button.scss'
 
 export default class Button extends Component {
   render() {
+    let classes = cx(
+      styles.button,
+      {
+        [styles[this.props.size]]: true,
+        [styles[this.props.context]]: true,
+      }
+    )
+
     return (
-      <button onClick={this.props.click} className={styles.button}>{this.props.children}</button>
+      <button onClick={this.props.click} className={classes}>{this.props.children}</button>
     )
   }
 }
 
+Button.defaultProps = {
+  size: 'medium',
+  context: 'default'
+}
+
 Button.propTypes = {
-  click: React.PropTypes.func,
-  children: React.PropTypes.string,
+  click: PropTypes.func,
+  size: PropTypes.oneOf(['big', 'medium', 'small']),
+  context: PropTypes.oneOf(['success', 'error', 'default', 'info']),
 }

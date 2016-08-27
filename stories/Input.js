@@ -12,10 +12,10 @@ storiesOf('Input', module)
     <Input placeholder="Type your text here" />
   ))
 
-  .add('large', () => (
-    <Input placeholder="Type your text here" size="large" />
-  ))
-
   .add('error', () => (
     <Input placeholder="Type your text here" context="error" />
+  ))
+
+  .add('big', () => (
+    <Input placeholder="Type your text here" size="big" />
   ))

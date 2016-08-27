@@ -10,23 +10,24 @@ const SOME_SERVER_DATA = [
       { id: 2,
         nome: 'Apple',
         subcategorias: [
-          { id: 3, nome: 'iPhone 6S' },
+          { id: 3, nome: 'iPhone 6S' }
         ]
       },
-      { id: 4, nome: 'Samsung' }
+      { id: 4,
+        nome: 'Samsung',
+        subcategorias: [
+          { id: 6, nome: 'Galaxy 7' }
+        ]
+      }
     ]
   },
-  {
-    id: 5,
-    nome: 'Tablets'
-  }
+  { id: 5, nome: 'Laptops' }
 ]
 
-class MultiLevelCategoryExample extends Component {
+class NestedCategoryNodesExample extends Component {
   render() {
-    let categories = this.getCategories([], this.props.categories, 1)
     return (
-      <div>{categories}</div>
+      <div>{this.getCategories([], this.props.categories, 1)}</div>
     )
   }
 
@@ -54,6 +55,6 @@ storiesOf('CategoryNode', module)
     <CategoryNode name="Root Node" level={1} />
   ))
 
-  .add('multi level nodes', () => (
-    <MultiLevelCategoryExample categories={SOME_SERVER_DATA} />
+  .add('nested', () => (
+    <NestedCategoryNodesExample categories={SOME_SERVER_DATA} />
   ))

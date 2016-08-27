@@ -4,9 +4,19 @@ import {storiesOf, action} from '@kadira/storybook'
 import Button from '../src/components/Button'
 
 storiesOf('Button', module)
-  .add('with text', () => (
-    <Button click={action('clicked')}>My First Button</Button>
+
+  .add('default', () => (
+    <Button click={action('clicked')}>Default</Button>
   ))
-  .add('with no text', () => (
-    <Button />
-  ));
+
+  .add('success', () => (
+    <Button context="success"><i className="ion-checkmark-round" /> Submit</Button>
+  ))
+
+  .add('error', () => (
+    <Button context="error"><i className="ion-close-round" /> Delete</Button>
+  ))
+
+  .add('info', () => (
+    <Button context="info"><i className="ion-information-circled" /> See more</Button>
+  ))

@@ -24,6 +24,6 @@ Input.defaultProps = {
 
 Input.propTypes = {
   type: React.PropTypes.oneOf(['text', 'number', 'password', 'submit']),
-  size: React.PropTypes.oneOf(['large', 'medium', 'small']),
+  size: React.PropTypes.oneOf(['big', 'medium', 'small']),
   context: React.PropTypes.oneOf(['default', 'error'])
 }

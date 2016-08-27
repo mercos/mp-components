@@ -16,14 +16,9 @@ export default class Link extends Component {
       {[`${styles.decorated}`]: this.props.decorated}
     )
 
-    let link
-    if(this.props.fontIconClass) {
-      link = <a href="" className={classes} onClick={this.onClickHandler}><i className={this.props.fontIconClass}/> {this.props.children}</a>
-    } else {
-      link = <a href="" className={classes} onClick={this.onClickHandler}>{this.props.children}</a>
-    }
-
-    return link
+    return (
+      <a href="" className={classes} onClick={this.onClickHandler}>{this.props.children}</a>
+    )
   }
 }
 
@@ -36,6 +31,5 @@ Link.defaultProps = {
 Link.propTypes = {
   context: React.PropTypes.oneOf(['default', 'error']),
   decorated: React.PropTypes.bool,
-  fontIconClass: React.PropTypes.string,
   onClick: React.PropTypes.func,
 }
