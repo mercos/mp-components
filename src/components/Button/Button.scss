@@ -6,9 +6,14 @@
   cursor: pointer;
 }
 
+.button.isAddonRight {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
 .button.medium {
   font-size: $mp-components-font-size-medium;
-  padding: 6px 15px;
+  padding: 6px 10px;
 }
 
 .button.big {

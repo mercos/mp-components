@@ -9,6 +9,7 @@ export default class Button extends Component {
       {
         [styles[this.props.size]]: true,
         [styles[this.props.context]]: true,
+        [`${styles.isAddonRight}`]: this.props.isAddonRight,
       }
     )
 
@@ -20,11 +21,13 @@ export default class Button extends Component {
 
 Button.defaultProps = {
   size: 'medium',
-  context: 'default'
+  context: 'default',
+  isAddonRight: false,
 }
 
 Button.propTypes = {
   click: PropTypes.func,
   size: PropTypes.oneOf(['big', 'medium', 'small']),
   context: PropTypes.oneOf(['success', 'error', 'default', 'info']),
+  isAddonRight: PropTypes.bool,
 }
