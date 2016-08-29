@@ -3,7 +3,13 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   entry: {
-    Button: './src/components/Button/Button.jsx'
+    Button: './src/components/Button/Button.jsx',
+    CategoryNode: './src/components/CategoryNode/CategoryNode.jsx',
+    InlineAlert: ['./src/components/InlineAlert/InlineAlert.jsx'],
+    Input: './src/components/Input/Input.jsx',
+    Link: ['./src/components/Link/Link.jsx'],
+    Node: ['./src/components/Node/Node.jsx'],
+    NodeOptions: ['./src/components/NodeOptions/NodeOptions.jsx'],
   },
   output: {
     filename: '[name].js',
@@ -33,6 +39,6 @@ module.exports = {
     extensions: ['', '.js', '.jsx'],
   },
   plugins: [
-    new ExtractTextPlugin('../css/style.css', {allChunks: true}),
+    new ExtractTextPlugin('../css/[name].css', {allChunks: true}),
   ]
 }

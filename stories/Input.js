@@ -23,7 +23,11 @@ storiesOf('Input', module)
 
   .add('with Button addon', () => (
     <div>
-      <Input placeholder="Username" hasAddonRight={true} onBlur={action('lost focus')} />
+      <Input placeholder="Username" hasAddonRight={true} onBlur={action('Focus lost')} />
       <Button context="info" isAddonRight={true} onClick={action('Button clicked')}><i className="ion-checkmark-round"/> Submit</Button>
     </div>
+  ))
+
+  .add('with error message', () => (
+    <Input placeholder="Email address" errorMessage="Invalid email address" />
   ))
