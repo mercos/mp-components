@@ -8,7 +8,7 @@ export default class Input extends Component {
       [`${styles.input}`]: true,
       [styles[this.props.size]]: true,
       [styles[this.props.context]]: true,
-      [`${styles.addonRight}`]: this.props.addonRight
+      [`${styles.hasAddonRight}`]: this.props.hasAddonRight
     })
 
     return (

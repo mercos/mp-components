@@ -14,7 +14,7 @@ export default class Button extends Component {
     )
 
     return (
-      <button onClick={this.props.click} className={classes}>{this.props.children}</button>
+      <button {...this.props} className={classes}>{this.props.children}</button>
     )
   }
 }
