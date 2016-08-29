@@ -8,7 +8,12 @@
 
 .button.medium {
   font-size: $mp-components-font-size-medium;
-  padding: 10px 15px;
+  padding: 6px 15px;
+}
+
+.button.big {
+  font-size: $mp-components-font-size-big;
+  padding: 9px 15px;
 }
 
 .button.success {
