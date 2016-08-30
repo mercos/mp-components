@@ -8,5 +8,5 @@ storiesOf('InlineAlert', module)
     <InlineAlert>Everything looking good here, carry on.</InlineAlert>
   ))
   .add('error', () => (
-    <InlineAlert context="error">Oh no! The Demogorgon in on the loose again.</InlineAlert>
+    <InlineAlert context="error">Oh no! The Demogorgon is on the loose again.</InlineAlert>
   ))

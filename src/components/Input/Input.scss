@@ -40,3 +40,16 @@
   font-size: $mpc-font-size-big;
   padding: 8px 10px;
 }
+
+.tooltip {
+  color: $mpc-text-color-error !important;
+  background-color: $mpc-color-error !important;
+  font-size: $mpc-font-size-small !important;
+  padding: 8px !important;
+
+  &.place-top.type-error:after {
+    border-top-color: $mpc-color-error !important;
+    border-top-style: solid !important;
+    border-top-width: 6px !important;
+  }
+}

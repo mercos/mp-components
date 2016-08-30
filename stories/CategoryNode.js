@@ -16,7 +16,7 @@ const SOME_SERVER_DATA = [
       { id: 4,
         nome: 'Samsung',
         subcategorias: [
-          { id: 6, nome: 'Galaxy 7' }
+          { id: 6, nome: 'Galaxy S7' }
         ]
       }
     ]

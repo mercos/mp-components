@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "storybook": "start-storybook -p 9001 -s ./public",
+    "storybook": "start-storybook -h 0.0.0.0 -p 9001 -s ./public",
     "clean": "rm -rf ./lib",
     "build": "npm run clean && $(npm bin)/webpack",
     "lint": "npm run lint:js && npm run lint:sass",
@@ -49,6 +49,7 @@
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
+    "react-tooltip": "^3.1.6",
     "sass-lint": "^1.9.0",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
