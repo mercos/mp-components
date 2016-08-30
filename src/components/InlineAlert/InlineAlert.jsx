@@ -18,7 +18,7 @@ export default class InlineAlert extends React.Component {
 }
 
 InlineAlert.defaultProps = {
-  context: 'default'
+  context: 'info'
 }
 
 InlineAlert.propTypes = {

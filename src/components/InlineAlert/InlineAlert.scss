@@ -1,21 +1,21 @@
 @import '../../styles/variables';
 
 .inlineAlert {
-  padding: $mp-components-text-container-padding;
+  padding: $mpc-text-container-padding;
   font-weight: 100;
 }
 
-.inlineAlert.default {
-  background-color: $mp-components-color-primary;
-  color: $mp-components-color-white;
+.inlineAlert.info {
+  background-color: $mpc-color-info;
+  color: $mpc-color-white;
 }
 
 .inlineAlert.error {
-  background-color: $mp-components-color-error;
-  color: $mp-components-color-white;
+  background-color: $mpc-color-error;
+  color: $mpc-color-white;
 }
 
 .inlineAlert a {
-  color: $mp-components-color-white;
+  color: $mpc-color-white;
   font-weight: bold;
 }
