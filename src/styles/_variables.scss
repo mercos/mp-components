@@ -1,12 +1,4 @@
-@import "colors";
-
-$mpc-color-gray-lightest: #f8f8f8;
-$mpc-color-gray-lighter: #f4f4f4;
-$mpc-color-gray-light: #a0a0a0;
-$mpc-color-gray: #e7e7e7;
-$mpc-color-gray-dark: #CCC;
-
-$mpc-color-white: #ffffff;
+@import 'colors';
 
 // Context Colors
 $mpc-text-color-default: $fuscous-gray;
@@ -45,13 +37,15 @@ $mpc-button-info-bg-hover: darken($mpc-button-info-bg, 5%);
 $mpc-button-info-border-hover: darken($mpc-button-info-border, 5%);
 
 // Input
-$mpc-color-input-border: $mpc-color-gray-dark;
+$mpc-color-input-border: #ccc;
 $mpc-color-input-inset: rgba(0, 0, 0, .075);
-$mpc-color-input-background: $mpc-color-white;
+$mpc-color-input-background: $white;
+$mpc-border-color-input-info: rgba(82, 168, 236, .8);
+$mpc-box-shadow-color-input-info: rgba(82, 168, 236, .6);
 
 // Node
-$mpc-color-node-level-3: $mpc-color-gray-light;
-$mpc-color-node-hover: $mpc-color-gray-lightest;
+$mpc-color-node-level-3: $star-dust;
+$mpc-color-node-hover: $desert-storm;
 $mpc-node-level1-border-top: $athens-gray;
 
 // Link

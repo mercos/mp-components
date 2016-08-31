@@ -1,5 +1,6 @@
 var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -18,27 +19,41 @@ module.exports = {
     libraryTarget: 'commonjs2',
   },
   externals: {
-    react: 'react'
+    react: 'react',
+    'react-dom': 'react-dom'
   },
   module: {
-    loaders: [
-      {
-        test:   /\.scss$/,
-        loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'),
-        publicPath: '../',
-        include: path.join(__dirname, 'src')
-      },
-      {
-        test: /\.jsx?$/,
-        loader: 'babel',
-        include: path.join(__dirname, 'src')
-      }
-    ]
+    loaders: [{
+      test: /\.scss$/,
+      loader: ExtractTextPlugin.extract('style', 'css?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass'),
+      publicPath: '../',
+      include: path.join(__dirname, 'src')
+    }, {
+      test: /\.jsx?$/,
+      loader: 'babel',
+      include: path.join(__dirname, 'src')
+    }]
   },
   resolve: {
     extensions: ['', '.js', '.jsx'],
   },
   plugins: [
-    new ExtractTextPlugin('../css/[name].css', {allChunks: true}),
+    new ExtractTextPlugin('../css/[name].css', {
+      allChunks: true
+    }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production')
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        unused: true,
+        dead_code: true,
+        warnings: false
+      }
+    }),
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.optimize.DedupePlugin(),
   ]
 }

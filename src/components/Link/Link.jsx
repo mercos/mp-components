@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import cx from 'classnames'
 import styles from './Link.scss'
 
@@ -13,7 +13,7 @@ export default class Link extends Component {
     let classes = cx(
       styles.link,
       styles[this.props.context],
-      {[`${styles.decorated}`]: this.props.decorated}
+      { [`${styles.decorated}`]: this.props.decorated }
     )
 
     return (
@@ -25,11 +25,12 @@ export default class Link extends Component {
 Link.defaultProps = {
   context: 'default',
   decorated: false,
-  onClick: (event) => {event.preventDefault()}
+  onClick: (event) => { event.preventDefault() },
 }
 
 Link.propTypes = {
-  context: React.PropTypes.oneOf(['default', 'error']),
-  decorated: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
+  context: PropTypes.oneOf(['default', 'error']),
+  decorated: PropTypes.bool,
+  onClick: PropTypes.func,
+  children: PropTypes.any,
 }

@@ -1,66 +1,66 @@
 @import '../../styles/variables';
 
 .button {
-  border: none;
+  border: 0;
   border-radius: 3px;
   cursor: pointer;
 }
 
-.button.isAddonRight {
-  border-top-left-radius: 0;
+.isAddonRight {
   border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
-.button.medium {
+.medium {
   font-size: $mpc-font-size-medium;
   padding: 6px 10px;
 }
 
-.button.big {
+.big {
   font-size: $mpc-font-size-big;
   padding: 9px 15px;
 }
 
-.button.success {
+.success {
   background-color: $mpc-button-success-bg;
   border: 1px solid $mpc-button-success-border;
   color: $mpc-button-success-text-color;
+
+  &:hover {
+    background-color: $mpc-button-success-bg-hover;
+    border: 1px solid $mpc-button-success-border-hover;
+  }
 }
 
-.button.success:hover {
-  background-color: $mpc-button-success-bg-hover;
-  border: 1px solid $mpc-button-success-border-hover;
-}
-
-.button.info {
+.info {
   background-color: $mpc-button-info-bg;
   border: 1px solid $mpc-button-info-border;
   color: $mpc-button-info-text-color;
+
+  &:hover {
+    background-color: $mpc-button-info-bg-hover;
+    border: 1px solid $mpc-button-info-border-hover;
+  }
 }
 
-.button.info:hover {
-  background-color: $mpc-button-info-bg-hover;
-  border: 1px solid $mpc-button-info-border-hover;
-}
-
-.button.default {
+.default {
   background-color: $mpc-button-default-bg;
   border: 1px solid $mpc-button-default-border;
   color: $mpc-button-default-color;
+
+  &:hover {
+    background-color: $mpc-button-default-bg-hover;
+    border: 1px solid $mpc-button-default-border-hover;
+  }
 }
 
-.button.default:hover {
-  background-color: $mpc-button-default-bg-hover;
-  border: 1px solid $mpc-button-default-border-hover;
-}
-
-.button.error {
+.error {
   background-color: $mpc-button-error-bg;
   border: 1px solid $mpc-button-error-border;
   color: $mpc-button-error-text-color;
-}
 
-.button.error:hover {
-  background-color: $mpc-button-error-bg-hover;
-  border: 1px solid $mpc-button-error-border-hover;
+  &:hover {
+    background-color: $mpc-button-error-bg-hover;
+    border: 1px solid $mpc-button-error-border-hover;
+  }
 }

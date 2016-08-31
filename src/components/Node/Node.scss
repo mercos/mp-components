@@ -1,16 +1,16 @@
-@import "../../styles/variables";
+@import '../../styles/variables';
 
 .node {
   padding: $mpc-text-container-padding;
-}
 
-.node:hover {
-  background-color: $mpc-color-node-hover;
+  &:hover {
+    background-color: $mpc-color-node-hover;
+  }
 }
 
 .nodeLevel1 {
-  padding-left: 20px;
   border-top: 1px solid $mpc-node-level1-border-top;
+  padding-left: 20px;
 
   .nodeLabel {
     font-weight: 600;
@@ -29,7 +29,7 @@
   padding-left: 60px;
 
   .nodeLabel {
-    font-weight: 400;
     color: $mpc-color-node-level-3;
+    font-weight: 400;
   }
 }

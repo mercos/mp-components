@@ -30,4 +30,5 @@ Button.propTypes = {
   size: PropTypes.oneOf(['big', 'medium', 'small']),
   context: PropTypes.oneOf(['success', 'error', 'default', 'info']),
   isAddonRight: PropTypes.bool,
+  children: PropTypes.any,
 }

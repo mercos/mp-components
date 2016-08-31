@@ -1,21 +1,21 @@
 @import '../../styles/variables';
 
 .inlineAlert {
-  padding: $mpc-text-container-padding;
   font-weight: 100;
+  padding: $mpc-text-container-padding;
+
+  a {
+    color: $white;
+    font-weight: bold;
+  }
 }
 
-.inlineAlert.info {
+.info {
   background-color: $mpc-color-info;
-  color: $mpc-color-white;
+  color: $mpc-text-color-info;
 }
 
-.inlineAlert.error {
+.error {
   background-color: $mpc-color-error;
-  color: $mpc-color-white;
-}
-
-.inlineAlert a {
-  color: $mpc-color-white;
-  font-weight: bold;
+  color: $mpc-text-color-error;
 }

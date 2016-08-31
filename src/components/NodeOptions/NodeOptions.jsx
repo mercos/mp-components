@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import styles from './NodeOptions.scss'
 
 export default class NodeOptions extends Component {
@@ -6,7 +6,7 @@ export default class NodeOptions extends Component {
     const visibility = this.props.show ? 'visible' : 'hidden'
 
     return (
-      <span className={styles.wrapper} style={{ visibility: visibility }}>
+      <span className={styles.wrapper} style={{ visibility }}>
         {this.props.children}
       </span>
     )
@@ -14,9 +14,10 @@ export default class NodeOptions extends Component {
 }
 
 NodeOptions.defaultProps = {
-  show: false
+  show: false,
 }
 
 NodeOptions.propTypes = {
-  show: React.PropTypes.bool,
+  show: PropTypes.bool,
+  children: PropTypes.any,
 }

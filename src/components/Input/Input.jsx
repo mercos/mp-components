@@ -8,21 +8,30 @@ export default class Input extends Component {
     super(props)
 
     this.state = {
-      isValid: this.props.errorMessage !== '' ? false : true,
+      isValid: this.props.errorMessage === '',
       currentErrorMessage: this.props.errorMessage,
     }
 
-    this.onChangeHandler = (event) => {this.clearInvalidState(event); this.props.onChange(event)}
+    this.onChangeHandler = (event) => { this.clearInvalidState(); this.props.onChange(event) }
+  }
+
+  clearInvalidState() {
+    if (!this.state.isValid) {
+      this.setState({
+        isValid: true,
+        currentErrorMessage: '',
+      }, () => ReactTooltip.hide())
+    }
   }
 
   render() {
-    let contextClassName = this.state.isValid ? this.props.context : 'error'
+    const CONTEXT_CLASS_NAME = this.state.isValid ? this.props.context : 'error'
     let classes = cx(
       styles.input,
       {
         [styles[this.props.size]]: true,
-        [styles[contextClassName]]: true,
-        [`${styles.hasAddonRight}`]: this.props.hasAddonRight
+        [styles[CONTEXT_CLASS_NAME]]: true,
+        [`${styles.hasAddonRight}`]: this.props.hasAddonRight,
       }
     )
 
@@ -39,20 +48,10 @@ export default class Input extends Component {
           data-event-off="blur"
           data-for={`${this.props.id}-tip`}
           data-class={styles.tooltip}
-          ref={(input) => {this.input = input}}
         />
         <ReactTooltip id={`${this.props.id}-tip`} />
       </span>
     )
-  }
-
-  clearInvalidState(event) {
-    if(!this.state.isValid) {
-      this.setState({
-        isValid: true,
-        currentErrorMessage: ''
-      }, () => ReactTooltip.hide())
-    }
   }
 }
 
@@ -60,7 +59,7 @@ Input.defaultProps = {
   type: 'text',
   size: 'medium',
   context: 'default',
-  addonRight: false,
+  hasAddonRight: false,
   errorMessage: '',
   onChange: () => {},
 }
@@ -72,4 +71,6 @@ Input.propTypes = {
   addonRight: PropTypes.bool,
   errorMessage: PropTypes.string,
   id: PropTypes.string.isRequired,
+  hasAddonRight: PropTypes.bool,
+  onChange: PropTypes.func,
 }

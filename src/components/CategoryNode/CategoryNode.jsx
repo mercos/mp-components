@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import styles from './CategoryNode.scss'
 import InlineAlert from '../InlineAlert'
 import Node from '../Node'
 import NodeOptions from '../NodeOptions'
@@ -11,7 +10,7 @@ export default class CategoryNode extends Component {
 
     this.state = {
       showNodeOptions: false,
-      showInlineAlert: false
+      showInlineAlert: false,
     }
 
     this.onMouseOverHandler = () => this.toggleNodeOptions()
@@ -20,20 +19,15 @@ export default class CategoryNode extends Component {
     this.onClickNoInlineAlert = (event) => this.toggleInlineAlert(event)
   }
 
-  render() {
-    let content = this.state.showInlineAlert ? this.getInlineAlertComponent() : this.getNodeComponent()
-
-    return (
-      <span onMouseOver={this.onMouseOverHandler} onMouseOut={this.onMouseOutHandler}>
-        {content}
-      </span>
-    )
-  }
-
   getInlineAlertComponent() {
     return (
       <InlineAlert context="error">
-        Are you sure you want to delete '{this.props.name}'? <a href="">YES</a> | <a href="" onClick={this.onClickNoInlineAlert}>NO</a>
+        Are you sure you want to delete '{this.props.name}'? <a href="">YES</a> |
+        <a
+          href=""
+          onClick={this.onClickNoInlineAlert}
+        >NO
+        </a>
       </InlineAlert>
     )
   }
@@ -52,19 +46,29 @@ export default class CategoryNode extends Component {
 
   toggleNodeOptions() {
     this.setState({
-      showNodeOptions: !this.state.showNodeOptions
+      showNodeOptions: !this.state.showNodeOptions,
     })
   }
 
   toggleInlineAlert(event) {
     event.preventDefault()
     this.setState({
-      showInlineAlert: !this.state.showInlineAlert
+      showInlineAlert: !this.state.showInlineAlert,
     })
+  }
+
+  render() {
+    let content = this.state.showInlineAlert ? this.getInlineAlertComponent() : this.getNodeComponent()
+
+    return (
+      <span onMouseOver={this.onMouseOverHandler} onMouseOut={this.onMouseOutHandler}>
+        {content}
+      </span>
+    )
   }
 }
 
 CategoryNode.propTypes = {
   name: PropTypes.string.isRequired,
-  level: PropTypes.number.isRequired
+  level: PropTypes.number.isRequired,
 }

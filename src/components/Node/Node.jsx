@@ -1,6 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 import cx from 'classnames'
-import NodeOptions from '../NodeOptions'
 import styles from './Node.scss'
 
 export default class Node extends Component {
@@ -20,6 +19,7 @@ export default class Node extends Component {
 }
 
 Node.propTypes = {
-  name: React.PropTypes.string.isRequired,
-  level: React.PropTypes.number.isRequired
+  name: PropTypes.string.isRequired,
+  level: PropTypes.number.isRequired,
+  children: PropTypes.any,
 }
