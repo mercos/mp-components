@@ -22,6 +22,6 @@ InlineAlert.defaultProps = {
 }
 
 InlineAlert.propTypes = {
-  context: PropTypes.oneOf(['error', 'default']),
+  context: PropTypes.oneOf(['error', 'info']),
   children: PropTypes.any,
 }

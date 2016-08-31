@@ -8,7 +8,7 @@
     "storybook": "start-storybook -h 0.0.0.0 -p 9001 -s ./public",
     "tag": "git tag v$npm_package_version",
     "clean": "rm -rf ./lib",
-    "build": "npm run clean && $(npm bin)/webpack -p",
+    "build": "npm run lint && npm run clean && $(npm bin)/webpack -p",
     "lint": "npm run lint:js && npm run lint:sass",
     "lint:js": "$(npm bin)/eslint --ext .js,.jsx src test",
     "lint:sass": "$(npm bin)/sass-lint 'src/**/*.scss' --verbose --no-exit",
