@@ -22,5 +22,5 @@ storiesOf('Button', module)
   ))
 
   .add('big', () => (
-    <Button context="info" size="big"><i className="ion-information-circled" /> See more</Button>
+    <Button context="info" size="big" className="foo bar"><i className="ion-information-circled" /> See more</Button>
   ))

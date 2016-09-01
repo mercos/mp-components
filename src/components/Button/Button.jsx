@@ -5,6 +5,7 @@ import styles from './Button.scss'
 export default class Button extends Component {
   render() {
     let classes = cx(
+      this.props.className,
       styles.button,
       {
         [styles[this.props.size]]: true,
@@ -23,6 +24,7 @@ Button.defaultProps = {
   size: 'medium',
   context: 'default',
   isAddonRight: false,
+  className: '',
 }
 
 Button.propTypes = {
@@ -31,4 +33,5 @@ Button.propTypes = {
   context: PropTypes.oneOf(['success', 'error', 'default', 'info']),
   isAddonRight: PropTypes.bool,
   children: PropTypes.any,
+  className: PropTypes.string,
 }

@@ -1,13 +1,16 @@
 import React, { Component, PropTypes } from 'react'
-import classNames from 'classnames'
+import cx from 'classnames'
 import styles from './InlineAlert.scss'
 
 export default class InlineAlert extends Component {
   render() {
-    let classes = classNames({
-      [`${styles.inlineAlert}`]: true,
-      [styles[this.props.context]]: true,
-    })
+    let classes = cx(
+      this.props.className,
+      {
+        [`${styles.inlineAlert}`]: true,
+        [styles[this.props.context]]: true,
+      }
+    )
 
     return (
       <div className={classes}>
@@ -19,9 +22,11 @@ export default class InlineAlert extends Component {
 
 InlineAlert.defaultProps = {
   context: 'info',
+  className: '',
 }
 
 InlineAlert.propTypes = {
   context: PropTypes.oneOf(['error', 'info']),
   children: PropTypes.any,
+  className: PropTypes.string,
 }

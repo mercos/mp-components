@@ -11,6 +11,7 @@ export default class Link extends Component {
 
   render() {
     let classes = cx(
+      this.props.className,
       styles.link,
       styles[this.props.context],
       { [`${styles.decorated}`]: this.props.decorated }
@@ -26,6 +27,7 @@ Link.defaultProps = {
   context: 'default',
   decorated: false,
   onClick: (event) => { event.preventDefault() },
+  className: '',
 }
 
 Link.propTypes = {
@@ -33,4 +35,5 @@ Link.propTypes = {
   decorated: PropTypes.bool,
   onClick: PropTypes.func,
   children: PropTypes.any,
+  className: PropTypes.string,
 }
