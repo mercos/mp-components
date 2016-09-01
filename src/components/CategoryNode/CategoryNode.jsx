@@ -22,12 +22,10 @@ export default class CategoryNode extends Component {
   getInlineAlertComponent() {
     return (
       <InlineAlert context="error">
-        Are you sure you want to delete '{this.props.name}'? <a href="">YES</a> |
-        <a
-          href=""
-          onClick={this.onClickNoInlineAlert}
-        >NO
-        </a>
+        Are you sure you want to delete '{this.props.name}'?
+        <span style={{ marginLeft: 10 }}>
+          <a href="">YES</a> | <a href="" onClick={this.onClickNoInlineAlert}>NO</a>
+        </span>
       </InlineAlert>
     )
   }

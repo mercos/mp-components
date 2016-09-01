@@ -5,6 +5,7 @@ import styles from './Node.scss'
 export default class Node extends Component {
   render() {
     let classes = cx(
+      this.props.className,
       styles[`nodeLevel${this.props.level}`],
       styles.node
     )
@@ -18,8 +19,13 @@ export default class Node extends Component {
   }
 }
 
+Node.defaultProps = {
+  className: '',
+}
+
 Node.propTypes = {
   name: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
   children: PropTypes.any,
+  className: PropTypes.string,
 }

@@ -27,6 +27,7 @@ export default class Input extends Component {
   render() {
     const CONTEXT_CLASS_NAME = this.state.isValid ? this.props.context : 'error'
     let classes = cx(
+      this.props.className,
       styles.input,
       {
         [styles[this.props.size]]: true,
@@ -62,6 +63,7 @@ Input.defaultProps = {
   hasAddonRight: false,
   errorMessage: '',
   onChange: () => {},
+  className: '',
 }
 
 Input.propTypes = {
@@ -73,4 +75,5 @@ Input.propTypes = {
   id: PropTypes.string.isRequired,
   hasAddonRight: PropTypes.bool,
   onChange: PropTypes.func,
+  className: PropTypes.string,
 }
