@@ -4,6 +4,11 @@
   border: 0;
   border-radius: 3px;
   cursor: pointer;
+
+  i {
+    font-size: inherit;
+    vertical-align: middle;
+  }
 }
 
 .isAddonRight {
