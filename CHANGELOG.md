@@ -1,6 +1,6 @@
 # Change Log
 
-## Next
+## 1.0.3
 - [fix] `<i/>` elements inside `Button` only inherit `font-size`
 - [fix] Components now support `className` prop
 
