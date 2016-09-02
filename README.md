@@ -6,7 +6,8 @@
 - `$ git clone git@github.com:meuspedidos/mp-components.git`
 - `$ cd mp-components`
 - Fire up `react-storybook` using `$ npm run storybook` then navigate to http://0.0.0.0:9001
-- Hack away then commit your changes
+- Hack away then commit your changes + PR to `master`
+- Checkout `master`
 - Add your changes to `CHANGELOG.md`, but **DO NOT COMMIT**
 - Run the following command using **ONE** of the options (*patch, minor, major*) according to the kind of changes you just made: `$ npm run version:[patch, minor, major]`. This command will bump the package version, create a new commit, a new tag, generate a new build, publish the new files to `npmjs.com`, build the `storybook` app and publish it to `GH Pages`
 
