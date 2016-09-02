@@ -3,12 +3,6 @@ import cx from 'classnames'
 import styles from './Link.scss'
 
 export default class Link extends Component {
-  constructor(props) {
-    super(props)
-
-    this.onClickHandler = (event) => this.props.onClick(event)
-  }
-
   render() {
     let classes = cx(
       this.props.className,
@@ -18,7 +12,7 @@ export default class Link extends Component {
     )
 
     return (
-      <a href="" className={classes} onClick={this.onClickHandler}>{this.props.children}</a>
+      <a href="" {...this.props} className={classes}>{this.props.children}</a>
     )
   }
 }
