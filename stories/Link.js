@@ -3,6 +3,11 @@ import { storiesOf, action } from '@kadira/storybook'
 
 import Link from '../src/components/Link'
 
+function clickAddItemLink(event) {
+  event.preventDefault()
+  action('clicked Add Item')
+}
+
 storiesOf('Link', module)
   .add('default', () => (
     <Link>Default</Link>
@@ -25,5 +30,5 @@ storiesOf('Link', module)
   ))
 
   .add('with onClick action', () => (
-    <Link fontIconClass="ion-ios-plus" onClick={action('clicked')}>Add Item</Link>
+    <Link onClick={action('clicked Add Item')}>Add Item</Link>
   ))

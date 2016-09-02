@@ -22,9 +22,14 @@ export default class CategoryNode extends Component {
   getInlineAlertComponent() {
     return (
       <InlineAlert context="error">
-        Are you sure you want to delete '{this.props.name}'?
+        {this.props.confirmDeleteLabel} '{this.props.name}'?
         <span style={{ marginLeft: 10 }}>
-          <a href="">YES</a> | <a href="" onClick={this.onClickNoInlineAlert}>NO</a>
+          <a
+            href=""
+            onClick={(event) => this.props.onClickConfirmDeleteHandler(event, this.props.categoryId)}
+          >{this.props.approveDeleteLabel}</a>
+          <span style={{ marginLeft: 5, marginRight: 5 }}>|</span>
+          <a href="" onClick={this.onClickNoInlineAlert}>{this.props.rejectDeleteLabel}</a>
         </span>
       </InlineAlert>
     )
@@ -34,9 +39,9 @@ export default class CategoryNode extends Component {
     return (
       <Node level={this.props.level} name={this.props.name}>
         <NodeOptions show={this.state.showNodeOptions}>
-          <Link>Add Child</Link>
-          <Link>Edit</Link>
-          <Link context="error" onClick={this.onClickDeleteCategoryHandler}>Delete</Link>
+          <Link>{this.props.addLinkContent}</Link>
+          <Link>{this.props.editLinkContent}</Link>
+          <Link context="error" onClick={this.onClickDeleteCategoryHandler}>{this.props.deleteLinkContent}</Link>
         </NodeOptions>
       </Node>
     )
@@ -66,7 +71,28 @@ export default class CategoryNode extends Component {
   }
 }
 
+CategoryNode.defaultProps = {
+  name: 'Foo',
+  level: 1,
+  confirmDeleteLabel: 'Are you sure you want to delete',
+  approveDeleteLabel: 'YES',
+  rejectDeleteLabel: 'NO',
+  addLinkContent: 'Add Child',
+  editLinkContent: 'Edit',
+  deleteLinkContent: 'Delete',
+  onClickConfirmDeleteHandler: (event) => { event.preventDefault(); },
+}
+
 CategoryNode.propTypes = {
   name: PropTypes.string.isRequired,
   level: PropTypes.number.isRequired,
+  confirmDeleteLabel: PropTypes.string,
+  approveDeleteLabel: PropTypes.string,
+  rejectDeleteLabel: PropTypes.string,
+  addLinkContent: PropTypes.any,
+  editLinkContent: PropTypes.any,
+  deleteLinkContent: PropTypes.any,
+  onClickConfirmDeleteHandler: PropTypes.func,
+  deleteCategoryClickHandler: PropTypes.func,
+  categoryId: PropTypes.number.isRequired,
 }
