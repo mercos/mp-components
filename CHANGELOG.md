@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.5
+- [new] Introduced a bunch of new `props` for `CategoryNode` in order to make it more usable for Meus Pedidos
+
 ## 1.0.4
 - [fix] Better specifity for `Input` styles
 
