@@ -1,20 +1,54 @@
 @import '../../styles/variables';
 
 .input {
-  background-color: $mpc-color-input-background;
-  border: 1px solid $mpc-color-input-border;
-  border-radius: 4px;
-  box-shadow: inset 0 1px 1px $mpc-color-input-inset;
-  color: $mpc-text-color-default;
-  outline: none;
-  transition: border-color linear .2s, box-shadow linear .2s;
-  width: 100%;
+  &[type='text'],
+  &[type='password'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='date'],
+  &[type='month'],
+  &[type='time'],
+  &[type='week'],
+  &[type='number'],
+  &[type='email'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='color'],
+  &[type='file'] {
+    background-color: $mpc-color-input-background;
+    border: 1px solid $mpc-color-input-border;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px $mpc-color-input-inset;
+    color: $mpc-text-color-default;
+    height: auto;
+    margin: 0;
+    outline: none;
+    transition: border-color linear .2s, box-shadow linear .2s;
+    width: 100%;
+  }
 }
 
 .hasAddonRight {
-  border-bottom-right-radius: 0;
-  border-top-right-radius: 0;
-  width: auto;
+  &[type='text'],
+  &[type='password'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='date'],
+  &[type='month'],
+  &[type='time'],
+  &[type='week'],
+  &[type='number'],
+  &[type='email'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='color'],
+  &[type='file'] {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+    width: auto;
+  }
 }
 
 .default {
@@ -25,22 +59,75 @@
 }
 
 .error {
-  border-color: $mpc-color-error;
+  &[type='text'],
+  &[type='password'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='date'],
+  &[type='month'],
+  &[type='time'],
+  &[type='week'],
+  &[type='number'],
+  &[type='email'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='color'],
+  &[type='file'] {
+    border-color: $mpc-color-error;
+  }
 }
 
 .small {
-  font-size: $mpc-font-size-small;
-  padding: 4px 6px;
+  &[type='text'],
+  &[type='password'],
+  &[type='email'],
+  &[type='number'] {
+    font-size: $mpc-font-size-small;
+    padding: 4px 6px;
+  }
 }
 
 .medium {
-  font-size: $mpc-font-size-medium;
-  padding: 6px;
+  &[type='text'],
+  &[type='password'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='date'],
+  &[type='month'],
+  &[type='time'],
+  &[type='week'],
+  &[type='number'],
+  &[type='email'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='color'],
+  &[type='file'] {
+    font-size: $mpc-font-size-medium;
+    padding: 6px;
+  }
 }
 
 .big {
-  font-size: $mpc-font-size-big;
-  padding: 8px 10px;
+  &[type='text'],
+  &[type='password'],
+  &[type='datetime'],
+  &[type='datetime-local'],
+  &[type='date'],
+  &[type='month'],
+  &[type='time'],
+  &[type='week'],
+  &[type='number'],
+  &[type='email'],
+  &[type='url'],
+  &[type='search'],
+  &[type='tel'],
+  &[type='color'],
+  &[type='file'] {
+    font-size: $mpc-font-size-big;
+    padding: 8px 10px;
+  }
 }
 
 .tooltip {

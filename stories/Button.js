@@ -6,7 +6,7 @@ import Button from '../src/components/Button'
 storiesOf('Button', module)
 
   .add('default', () => (
-    <Button click={action('clicked')}>Default</Button>
+    <Button onClick={action('clicked')}>Default</Button>
   ))
 
   .add('success', () => (
