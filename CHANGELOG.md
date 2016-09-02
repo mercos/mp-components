@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.4
+- [fix] Better specifity for `Input` styles
+
 ## 1.0.3
 - [fix] `<i/>` elements inside `Button` only inherit `font-size`
 - [fix] Components now support `className` prop
