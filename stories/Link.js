@@ -25,5 +25,5 @@ storiesOf('Link', module)
   ))
 
   .add('with onClick action', () => (
-    <Link fontIconClass="ion-ios-plus" onClick={action('clicked')}>Add Item</Link>
+    <Link onClick={action('clicked Add Item')}>Add Item</Link>
   ))

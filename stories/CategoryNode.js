@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {storiesOf} from '@kadira/storybook'
+import { storiesOf } from '@kadira/storybook'
 import CategoryNode from '../src/components/CategoryNode'
 
 const SOME_SERVER_DATA = [
@@ -25,10 +25,15 @@ const SOME_SERVER_DATA = [
 ]
 
 class NestedCategoryNodesExample extends Component {
-  render() {
-    return (
-      <div>{this.getCategories([], this.props.categories, 1)}</div>
-    )
+  constructor(props) {
+    super(props)
+
+    this.deleteCategoryHandler = (event, categoryId) => this.deleteCategory(event, categoryId)
+  }
+
+  deleteCategory(event, categoryId) {
+    event.preventDefault()
+    console.log('deleteCategory', categoryId)
   }
 
   getCategories(categoriesOutput, categoriesInput, level) {
@@ -44,7 +49,19 @@ class NestedCategoryNodesExample extends Component {
 
   getComponentFromData(category, level){
     return (
-      <CategoryNode name={category.nome} level={level} key={category.id} />
+      <CategoryNode
+        name={category.nome}
+        level={level}
+        key={category.id}
+        categoryId={category.id}
+        onClickConfirmDeleteHandler={this.deleteCategoryHandler}
+      />
+    )
+  }
+
+  render() {
+    return (
+      <div>{this.getCategories([], this.props.categories, 1)}</div>
     )
   }
 }
