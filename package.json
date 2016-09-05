@@ -1,6 +1,6 @@
 {
   "name": "mp-components",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Meus Pedidos React components and style guide",
   "main": "index.js",
   "scripts": {
