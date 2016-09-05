@@ -3,6 +3,8 @@ import InlineAlert from '../InlineAlert'
 import Node from '../Node'
 import NodeOptions from '../NodeOptions'
 import Link from '../Link'
+import cx from 'classnames'
+import styles from './CategoryNode.scss'
 
 export default class CategoryNode extends Component {
   constructor(props) {
@@ -37,10 +39,14 @@ export default class CategoryNode extends Component {
   }
 
   getNodeComponent() {
+    let addLinkClass = cx({
+      [`${styles.hidden}`]: this.props.level === 3
+    })
+
     return (
       <Node level={this.props.level} name={this.props.name}>
         <NodeOptions show={this.state.showNodeOptions}>
-          <Link>{this.props.addLinkContent}</Link>
+          <Link className={addLinkClass}>{this.props.addLinkContent}</Link>
           <Link>{this.props.editLinkContent}</Link>
           <Link context="error" onClick={this.onClickDeleteCategoryHandler}>{this.props.deleteLinkContent}</Link>
         </NodeOptions>
