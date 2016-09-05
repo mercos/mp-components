@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react'
+import cx from 'classnames'
 import InlineAlert from '../InlineAlert'
 import Node from '../Node'
 import NodeOptions from '../NodeOptions'
 import Link from '../Link'
-import cx from 'classnames'
 import styles from './CategoryNode.scss'
 
 export default class CategoryNode extends Component {
@@ -40,7 +40,7 @@ export default class CategoryNode extends Component {
 
   getNodeComponent() {
     let addLinkClass = cx({
-      [`${styles.hidden}`]: this.props.level === 3
+      [`${styles.hidden}`]: this.props.level === 3,
     })
 
     return (
