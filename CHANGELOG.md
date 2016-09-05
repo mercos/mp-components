@@ -1,8 +1,10 @@
 # Change Log
 
+## 1.0.9
+- [fix] Hide add `Link` for 3rd level `CategoryNode`s
+
 ## 1.0.8
 - [fix] Close the `InlineAlert` when clicking 'YES' in `CategoryNode` delete confirm
-
 
 ## 1.0.7
 - [new] Introduced a bunch of new `props` for `CategoryNode` in order to make it more usable for Meus Pedidos
