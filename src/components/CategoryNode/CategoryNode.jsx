@@ -20,20 +20,13 @@ export default class CategoryNode extends Component {
     this.deleteCategoryHandler = (event) => this.deleteCategory(event)
   }
 
-  deleteCategory(event) {
-    this.setState({
-      showInlineAlert: false
-    })
-    this.props.onClickConfirmDeleteHandler(event, this.props.categoryId)
-  }
-
   getInlineAlertComponent() {
     return (
       <InlineAlert context="error">
         {this.props.confirmDeleteLabel} '{this.props.name}'?
         <span style={{ marginLeft: 10 }}>
           <a
-            href="#"
+            href=""
             onClick={(event) => this.deleteCategoryHandler(event)}
           >{this.props.approveDeleteLabel}</a>
           <span style={{ marginLeft: 5, marginRight: 5 }}>|</span>
@@ -53,6 +46,13 @@ export default class CategoryNode extends Component {
         </NodeOptions>
       </Node>
     )
+  }
+
+  deleteCategory(event) {
+    this.setState({
+      showInlineAlert: false,
+    })
+    this.props.onClickConfirmDeleteHandler(event, this.props.categoryId)
   }
 
   toggleNodeOptions() {
