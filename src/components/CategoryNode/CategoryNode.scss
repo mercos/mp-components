@@ -1,3 +1,7 @@
 .hidden {
   display: none;
 }
+
+.newSubcategoryLine {
+  composes: node from '../Node/Node.scss'
+}

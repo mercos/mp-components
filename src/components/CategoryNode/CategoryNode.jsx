@@ -4,6 +4,8 @@ import InlineAlert from '../InlineAlert'
 import Node from '../Node'
 import NodeOptions from '../NodeOptions'
 import Link from '../Link'
+import Input from '../Input'
+import Button from '../Button'
 import styles from './CategoryNode.scss'
 
 export default class CategoryNode extends Component {
@@ -13,6 +15,8 @@ export default class CategoryNode extends Component {
     this.state = {
       showNodeOptions: false,
       showInlineAlert: false,
+      showNewCategoryInput: false,
+      newSubcategoryInputValue: '',
     }
 
     this.onMouseOverHandler = () => this.toggleNodeOptions()
@@ -20,6 +24,21 @@ export default class CategoryNode extends Component {
     this.onClickDeleteCategoryHandler = (event) => this.toggleInlineAlert(event)
     this.onClickNoInlineAlert = (event) => this.toggleInlineAlert(event)
     this.deleteCategoryHandler = (event) => this.deleteCategory(event)
+    this.onClickLinkAddHandler = (event) => this.toggleNewCategoryInput(event)
+    this.onClickCancelNewCategoryHandler = (event) => this.toggleNewCategoryInput(event)
+    this.onSubmitNewSubcategoryHandler = (event) => this.onSubmitNewSubcategory(event)
+    this.onChangeNewSubcatInputHandler = (event) => this.updateNewSubcatInputValue(event)
+  }
+
+  onSubmitNewSubcategory(event) {
+    event.preventDefault()
+    const inputValue = this.state.newSubcategoryInputValue.trim()
+    this.setState({
+      showNewCategoryInput: false,
+    })
+    this.onSubmitNewSubcatForm(inputValue, this.props.categoryId)
+
+    return false
   }
 
   getInlineAlertComponent() {
@@ -38,6 +57,28 @@ export default class CategoryNode extends Component {
     )
   }
 
+  getNewSubcategoryForm() {
+    const displayInput = this.state.showNewCategoryInput ? 'block' : 'none'
+
+    return (
+      <form
+        style={{ display: displayInput }}
+        className={styles.newSubcategoryLine}
+        onSubmit={this.onSubmitNewSubcategoryHandler}
+        ref={(form) => (this.subCatForm = form)}
+      >
+        <Input
+          id={`edit-category-${this.props.categoryId}`}
+          hasAddonRight
+          autoComplete="off"
+          onChange={this.onChangeNewSubcatInputHandler}
+        />
+        <Button isAddonRight context="info" type="submit">{this.props.addSubcatButtonLabel}</Button>
+        <Link onClick={this.onClickCancelNewCategoryHandler}>{this.props.cancelAddSubcatLinkLabel}</Link>
+      </form>
+    )
+  }
+
   getNodeComponent() {
     let addLinkClass = cx({
       [`${styles.hidden}`]: this.props.level === 3,
@@ -46,12 +87,27 @@ export default class CategoryNode extends Component {
     return (
       <Node level={this.props.level} name={this.props.name}>
         <NodeOptions show={this.state.showNodeOptions}>
-          <Link className={addLinkClass}>{this.props.addLinkContent}</Link>
+          <Link className={addLinkClass} onClick={this.onClickLinkAddHandler}>{this.props.addLinkContent}</Link>
           <Link>{this.props.editLinkContent}</Link>
           <Link context="error" onClick={this.onClickDeleteCategoryHandler}>{this.props.deleteLinkContent}</Link>
         </NodeOptions>
       </Node>
     )
+  }
+
+  updateNewSubcatInputValue(event) {
+    this.setState({
+      newSubcategoryInputValue: event.target.value,
+    })
+  }
+
+  toggleNewCategoryInput(event) {
+    event.preventDefault()
+
+    this.subCatForm.reset()
+    this.setState({
+      showNewCategoryInput: !this.state.showNewCategoryInput,
+    })
   }
 
   deleteCategory(event) {
@@ -78,9 +134,12 @@ export default class CategoryNode extends Component {
     let content = this.state.showInlineAlert ? this.getInlineAlertComponent() : this.getNodeComponent()
 
     return (
-      <span onMouseOver={this.onMouseOverHandler} onMouseOut={this.onMouseOutHandler}>
-        {content}
-      </span>
+      <div>
+        <span onMouseOver={this.onMouseOverHandler} onMouseOut={this.onMouseOutHandler}>
+          {content}
+        </span>
+        {this.getNewSubcategoryForm()}
+      </div>
     )
   }
 }
@@ -95,6 +154,9 @@ CategoryNode.defaultProps = {
   editLinkContent: 'Edit',
   deleteLinkContent: 'Delete',
   onClickConfirmDeleteHandler: (event) => { event.preventDefault(); },
+  addSubcatButtonLabel: 'OK',
+  cancelAddSubcatLinkLabel: 'Cancel',
+  onSubmitNewSubcatForm: () => {},
 }
 
 CategoryNode.propTypes = {
@@ -109,4 +171,7 @@ CategoryNode.propTypes = {
   onClickConfirmDeleteHandler: PropTypes.func,
   deleteCategoryClickHandler: PropTypes.func,
   categoryId: PropTypes.number.isRequired,
+  addSubcatButtonLabel: PropTypes.string,
+  cancelAddSubcatLinkLabel: PropTypes.string,
+  onSubmitNewSubcatForm: PropTypes.func,
 }
