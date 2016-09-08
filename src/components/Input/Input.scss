@@ -77,23 +77,25 @@
     border-color: $mpc-color-error;
   }
 
-  &[type='text']:focus,
-  &[type='password']:focus,
-  &[type='datetime']:focus,
-  &[type='datetime-local']:focus,
-  &[type='date']:focus,
-  &[type='month']:focus,
-  &[type='time']:focus,
-  &[type='week']:focus,
-  &[type='number']:focus,
-  &[type='email']:focus,
-  &[type='url']:focus,
-  &[type='search']:focus,
-  &[type='tel']:focus,
-  &[type='color']:focus,
-  &[type='file']:focus {
-    border-color: $mpc-color-error;
-    box-shadow: none;
+  &:focus {
+    &[type='text'],
+    &[type='password'],
+    &[type='datetime'],
+    &[type='datetime-local'],
+    &[type='date'],
+    &[type='month'],
+    &[type='time'],
+    &[type='week'],
+    &[type='number'],
+    &[type='email'],
+    &[type='url'],
+    &[type='search'],
+    &[type='tel'],
+    &[type='color'],
+    &[type='file'] {
+      border-color: $mpc-color-error;
+      box-shadow: none;
+    }
   }
 }
 

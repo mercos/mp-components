@@ -32,6 +32,10 @@ export default class CategoryNode extends Component {
   }
 
   getNewSubcategoryForm() { // eslint-disable-line react/sort-comp
+    if (this.props.level === 3) {
+      return ''
+    }
+
     const displayInput = this.state.showNewCategoryInput ? 'block' : 'none'
 
     return (
