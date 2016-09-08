@@ -15,6 +15,17 @@ export default class Input extends Component {
     this.onChangeHandler = (event) => { this.clearInvalidState(); this.props.onChange(event) }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      isValid: nextProps.errorMessage === '',
+      currentErrorMessage: nextProps.errorMessage,
+    }, () => {
+      if (nextProps.errorMessage !== '') {
+        ReactTooltip.show(this.input)
+      }
+    })
+  }
+
   clearInvalidState() {
     if (!this.state.isValid) {
       this.setState({
@@ -49,6 +60,7 @@ export default class Input extends Component {
           data-event-off="blur"
           data-for={`${this.props.id}-tip`}
           data-class={styles.tooltip}
+          ref={(input) => (this.input = input)}
         />
         <ReactTooltip id={`${this.props.id}-tip`} />
       </span>

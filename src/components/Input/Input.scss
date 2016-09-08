@@ -76,6 +76,25 @@
   &[type='file'] {
     border-color: $mpc-color-error;
   }
+
+  &[type='text']:focus,
+  &[type='password']:focus,
+  &[type='datetime']:focus,
+  &[type='datetime-local']:focus,
+  &[type='date']:focus,
+  &[type='month']:focus,
+  &[type='time']:focus,
+  &[type='week']:focus,
+  &[type='number']:focus,
+  &[type='email']:focus,
+  &[type='url']:focus,
+  &[type='search']:focus,
+  &[type='tel']:focus,
+  &[type='color']:focus,
+  &[type='file']:focus {
+    border-color: $mpc-color-error;
+    box-shadow: none;
+  }
 }
 
 .small {

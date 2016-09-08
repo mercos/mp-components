@@ -17,6 +17,7 @@ export default class CategoryNode extends Component {
       showInlineAlert: false,
       showNewCategoryInput: false,
       newSubcategoryInputValue: '',
+      newSubcategoryInputErrorMsg: '',
     }
 
     this.onMouseOverHandler = () => this.toggleNodeOptions()
@@ -30,34 +31,7 @@ export default class CategoryNode extends Component {
     this.onChangeNewSubcatInputHandler = (event) => this.updateNewSubcatInputValue(event)
   }
 
-  onSubmitNewSubcategory(event) {
-    event.preventDefault()
-    const inputValue = this.state.newSubcategoryInputValue.trim()
-    this.setState({
-      showNewCategoryInput: false,
-    })
-    this.onSubmitNewSubcatForm(inputValue, this.props.categoryId)
-
-    return false
-  }
-
-  getInlineAlertComponent() {
-    return (
-      <InlineAlert context="error">
-        {this.props.confirmDeleteLabel} '{this.props.name}'?
-        <span style={{ marginLeft: 10 }}>
-          <a
-            href=""
-            onClick={(event) => this.deleteCategoryHandler(event)}
-          >{this.props.approveDeleteLabel}</a>
-          <span style={{ marginLeft: 5, marginRight: 5 }}>|</span>
-          <a href="" onClick={this.onClickNoInlineAlert}>{this.props.rejectDeleteLabel}</a>
-        </span>
-      </InlineAlert>
-    )
-  }
-
-  getNewSubcategoryForm() {
+  getNewSubcategoryForm() { // eslint-disable-line react/sort-comp
     const displayInput = this.state.showNewCategoryInput ? 'block' : 'none'
 
     return (
@@ -72,11 +46,18 @@ export default class CategoryNode extends Component {
           hasAddonRight
           autoComplete="off"
           onChange={this.onChangeNewSubcatInputHandler}
+          errorMessage={this.state.newSubcategoryInputErrorMsg}
         />
         <Button isAddonRight context="info" type="submit">{this.props.addSubcatButtonLabel}</Button>
         <Link onClick={this.onClickCancelNewCategoryHandler}>{this.props.cancelAddSubcatLinkLabel}</Link>
       </form>
     )
+  }
+
+  saveNewSubcategoryErrorCallback(errorMessage) {
+    this.setState({
+      newSubcategoryInputErrorMsg: errorMessage,
+    })
   }
 
   getNodeComponent() {
@@ -95,9 +76,44 @@ export default class CategoryNode extends Component {
     )
   }
 
+  onSubmitNewSubcategory(event) {
+    event.preventDefault()
+    const inputValue = this.state.newSubcategoryInputValue.trim()
+
+    this.props.onSubmitNewSubcatForm(
+      inputValue,
+      this.props.categoryId,
+      this.saveNewSubcategorySuccessCallback.bind(this),
+      this.saveNewSubcategoryErrorCallback.bind(this)
+    )
+  }
+
+  getInlineAlertComponent() {
+    return (
+      <InlineAlert context="error">
+        {this.props.confirmDeleteLabel} '{this.props.name}'?
+        <span style={{ marginLeft: 10 }}>
+          <a
+            href=""
+            onClick={(event) => this.deleteCategoryHandler(event)}
+          >{this.props.approveDeleteLabel}</a>
+          <span style={{ marginLeft: 5, marginRight: 5 }}>|</span>
+          <a href="" onClick={this.onClickNoInlineAlert}>{this.props.rejectDeleteLabel}</a>
+        </span>
+      </InlineAlert>
+    )
+  }
+
+  saveNewSubcategorySuccessCallback() {
+    this.setState({
+      showNewCategoryInput: false,
+    })
+  }
+
   updateNewSubcatInputValue(event) {
     this.setState({
       newSubcategoryInputValue: event.target.value,
+      newSubcategoryInputErrorMsg: '',
     })
   }
 
