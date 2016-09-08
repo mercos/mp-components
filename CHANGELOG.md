@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.10
+- [new] `CategoryNode` now has a `form` for adding subcategories
+
 ## 1.0.9
 - [fix] Hide add `Link` for 3rd level `CategoryNode`s
 
