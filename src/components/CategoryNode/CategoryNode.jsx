@@ -51,6 +51,7 @@ export default class CategoryNode extends Component {
           autoComplete="off"
           onChange={this.onChangeNewSubcatInputHandler}
           errorMessage={this.state.newSubcategoryInputErrorMsg}
+          ref={(input) => (this.subcategoryInput = input)}
         />
         <Button isAddonRight context="info" type="submit">{this.props.addSubcatButtonLabel}</Button>
         <Link onClick={this.onClickCancelNewCategoryHandler}>{this.props.cancelAddSubcatLinkLabel}</Link>
@@ -127,6 +128,10 @@ export default class CategoryNode extends Component {
     this.subCatForm.reset()
     this.setState({
       showNewCategoryInput: !this.state.showNewCategoryInput,
+    }, () => {
+      if (this.state.showNewCategoryInput) {
+        this.subcategoryInput.input.focus()
+      }
     })
   }
 
