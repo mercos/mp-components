@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.11
+- [new] `CategoryNode` now has a `CategoryForm` for adding and editing categories
+
 ## 1.0.10
 - [new] `CategoryNode` now has a `form` for adding subcategories
 
