@@ -69,7 +69,7 @@ class NestedCategoryNodesExample extends Component {
 storiesOf('CategoryNode', module)
 
   .add('single node', () => (
-    <CategoryNode name="Root Node" level={1} />
+    <CategoryNode name="Root Node" level={1} categoryId={1} />
   ))
 
   .add('nested', () => (

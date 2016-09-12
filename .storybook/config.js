@@ -7,6 +7,7 @@ function loadStories() {
   require('../stories/Link')
   require('../stories/Node')
   require('../stories/CategoryNode')
+  require('../stories/CategoryForm')
 }
 
 configure(loadStories, module)

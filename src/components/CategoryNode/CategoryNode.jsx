@@ -4,8 +4,7 @@ import InlineAlert from '../InlineAlert'
 import Node from '../Node'
 import NodeOptions from '../NodeOptions'
 import Link from '../Link'
-import Input from '../Input'
-import Button from '../Button'
+import CategoryForm from '../CategoryForm'
 import styles from './CategoryNode.scss'
 
 export default class CategoryNode extends Component {
@@ -16,19 +15,24 @@ export default class CategoryNode extends Component {
       showNodeOptions: false,
       showInlineAlert: false,
       showNewCategoryInput: false,
-      newSubcategoryInputValue: '',
       newSubcategoryInputErrorMsg: '',
+      showEditForm: false,
+      editInputErrorMsg: '',
     }
 
-    this.onMouseOverHandler = () => this.toggleNodeOptions()
-    this.onMouseOutHandler = () => this.toggleNodeOptions()
+    this.onMouseOverHandler = () => this.toggleNodeOptions(true)
+    this.onMouseOutHandler = () => this.toggleNodeOptions(false)
     this.onClickDeleteCategoryHandler = (event) => this.toggleInlineAlert(event)
     this.onClickNoInlineAlert = (event) => this.toggleInlineAlert(event)
     this.deleteCategoryHandler = (event) => this.deleteCategory(event)
     this.onClickLinkAddHandler = (event) => this.toggleNewCategoryInput(event)
     this.onClickCancelNewCategoryHandler = (event) => this.toggleNewCategoryInput(event)
     this.onSubmitNewSubcategoryHandler = (event) => this.onSubmitNewSubcategory(event)
-    this.onChangeNewSubcatInputHandler = (event) => this.updateNewSubcatInputValue(event)
+    this.onChangeNewSubcatInputHandler = () => this.clearNewSubcatInput()
+    this.onChangeEditInputHandler = () => this.clearEditInput()
+    this.onClickEditHandler = (event) => this.toggleEditForm(event)
+    this.onClickCancelEditHandler = (event) => this.onClickCancelEdit(event)
+    this.onSubmitEditHandler = (event) => this.onSubmitEdit(event)
   }
 
   getNewSubcategoryForm() { // eslint-disable-line react/sort-comp
@@ -36,32 +40,45 @@ export default class CategoryNode extends Component {
       return ''
     }
 
-    const displayInput = this.state.showNewCategoryInput ? 'block' : 'none'
+    const formDisplay = this.state.showNewCategoryInput ? 'block' : 'none'
 
     return (
-      <form
-        style={{ display: displayInput }}
-        className={styles.newSubcategoryLine}
+      <CategoryForm
+        style={{ display: formDisplay }}
         onSubmit={this.onSubmitNewSubcategoryHandler}
-        ref={(form) => (this.subCatForm = form)}
-      >
-        <Input
-          id={`edit-category-${this.props.categoryId}`}
-          hasAddonRight
-          autoComplete="off"
-          onChange={this.onChangeNewSubcatInputHandler}
-          errorMessage={this.state.newSubcategoryInputErrorMsg}
-          ref={(input) => (this.subcategoryInput = input)}
-        />
-        <Button isAddonRight context="info" type="submit">{this.props.addSubcatButtonLabel}</Button>
-        <Link onClick={this.onClickCancelNewCategoryHandler}>{this.props.cancelAddSubcatLinkLabel}</Link>
-      </form>
+        onClickCancelLink={this.onClickCancelNewCategoryHandler}
+        parentId={this.props.categoryId}
+        ref={(form) => (this.subCatFormRef = form)}
+        cancelLinkLabel={this.props.cancelAddSubcatLinkLabel}
+        inputErrorMessage={this.state.newSubcategoryInputErrorMsg}
+        onChangeInputValue={this.onChangeNewSubcatInputHandler}
+      />
+    )
+  }
+
+  getEditForm() {
+    return (
+      <CategoryForm
+        onSubmit={this.onSubmitEditHandler}
+        onClickCancelLink={this.onClickCancelEditHandler}
+        parentId={this.props.categoryId}
+        ref={(form) => (this.editFormRef = form)}
+        cancelLinkLabel={this.props.cancelAddSubcatLinkLabel}
+        inputErrorMessage={this.state.editInputErrorMsg}
+        onChangeInputValue={this.onChangeEditInputHandler}
+      />
     )
   }
 
   saveNewSubcategoryErrorCallback(errorMessage) {
     this.setState({
       newSubcategoryInputErrorMsg: errorMessage,
+    })
+  }
+
+  editErrorCallback(errorMessage) {
+    this.setState({
+      editInputErrorMsg: errorMessage,
     })
   }
 
@@ -74,7 +91,7 @@ export default class CategoryNode extends Component {
       <Node level={this.props.level} name={this.props.name}>
         <NodeOptions show={this.state.showNodeOptions}>
           <Link className={addLinkClass} onClick={this.onClickLinkAddHandler}>{this.props.addLinkContent}</Link>
-          <Link>{this.props.editLinkContent}</Link>
+          <Link onClick={this.onClickEditHandler}>{this.props.editLinkContent}</Link>
           <Link context="error" onClick={this.onClickDeleteCategoryHandler}>{this.props.deleteLinkContent}</Link>
         </NodeOptions>
       </Node>
@@ -83,13 +100,37 @@ export default class CategoryNode extends Component {
 
   onSubmitNewSubcategory(event) {
     event.preventDefault()
-    const inputValue = this.state.newSubcategoryInputValue.trim()
+    const inputValue = this.subCatFormRef.inputRef.input.value.trim()
 
     this.props.onSubmitNewSubcatForm(
       inputValue,
       this.props.categoryId,
       this.saveNewSubcategorySuccessCallback.bind(this),
       this.saveNewSubcategoryErrorCallback.bind(this)
+    )
+  }
+
+  clearNewSubcatInput() {
+    this.setState({
+      newSubcategoryInputErrorMsg: '',
+    })
+  }
+
+  clearEditInput() {
+    this.setState({
+      editInputErrorMsg: '',
+    })
+  }
+
+  onSubmitEdit(event) {
+    event.preventDefault()
+    const inputValue = this.editFormRef.inputRef.input.value.trim()
+
+    this.props.onSubmitEditForm(
+      inputValue,
+      this.props.categoryId,
+      this.editSuccessCallback.bind(this),
+      this.editErrorCallback.bind(this)
     )
   }
 
@@ -115,23 +156,45 @@ export default class CategoryNode extends Component {
     })
   }
 
-  updateNewSubcatInputValue(event) {
+  editSuccessCallback() {
     this.setState({
-      newSubcategoryInputValue: event.target.value,
-      newSubcategoryInputErrorMsg: '',
+      showEditForm: false,
     })
   }
 
   toggleNewCategoryInput(event) {
     event.preventDefault()
 
-    this.subCatForm.reset()
+    this.subCatFormRef.formRef.reset()
     this.setState({
       showNewCategoryInput: !this.state.showNewCategoryInput,
     }, () => {
       if (this.state.showNewCategoryInput) {
-        this.subcategoryInput.input.focus()
+        this.subCatFormRef.inputRef.input.focus()
       }
+    })
+  }
+
+  toggleEditForm(event) {
+    event.preventDefault()
+
+    this.setState({
+      showEditForm: !this.state.showEditForm,
+    }, () => {
+      if (this.state.showEditForm) {
+        this.editFormRef.inputRef.input.value = this.props.name
+        this.editFormRef.inputRef.input.focus()
+      }
+    })
+  }
+
+  onClickCancelEdit(event) {
+    event.preventDefault()
+
+    this.editFormRef.formRef.reset()
+    this.setState({
+      showEditForm: false,
+      editInputErrorMsg: '',
     })
   }
 
@@ -142,9 +205,9 @@ export default class CategoryNode extends Component {
     this.props.onClickConfirmDeleteHandler(event, this.props.categoryId)
   }
 
-  toggleNodeOptions() {
+  toggleNodeOptions(show) {
     this.setState({
-      showNodeOptions: !this.state.showNodeOptions,
+      showNodeOptions: show,
     })
   }
 
@@ -156,7 +219,14 @@ export default class CategoryNode extends Component {
   }
 
   render() {
-    let content = this.state.showInlineAlert ? this.getInlineAlertComponent() : this.getNodeComponent()
+    let content
+    if (this.state.showInlineAlert) {
+      content = this.getInlineAlertComponent()
+    } else if (this.state.showEditForm) {
+      content = this.getEditForm()
+    } else {
+      content = this.getNodeComponent()
+    }
 
     return (
       <div>
@@ -182,6 +252,7 @@ CategoryNode.defaultProps = {
   addSubcatButtonLabel: 'OK',
   cancelAddSubcatLinkLabel: 'Cancel',
   onSubmitNewSubcatForm: () => {},
+  onSubmitEditForm: () => {},
 }
 
 CategoryNode.propTypes = {
@@ -199,4 +270,5 @@ CategoryNode.propTypes = {
   addSubcatButtonLabel: PropTypes.string,
   cancelAddSubcatLinkLabel: PropTypes.string,
   onSubmitNewSubcatForm: PropTypes.func,
+  onSubmitEditForm: PropTypes.func,
 }

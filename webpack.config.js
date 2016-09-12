@@ -6,6 +6,7 @@ module.exports = {
   entry: {
     Button: ['./src/components/Button/Button.jsx'],
     CategoryNode: './src/components/CategoryNode/CategoryNode.jsx',
+    CategoryForm: ['./src/components/CategoryForm/CategoryForm.jsx'],
     InlineAlert: ['./src/components/InlineAlert/InlineAlert.jsx'],
     Input: ['./src/components/Input/Input.jsx'],
     Link: ['./src/components/Link/Link.jsx'],
