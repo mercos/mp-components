@@ -70,18 +70,6 @@ export default class CategoryNode extends Component {
     )
   }
 
-  saveNewSubcategoryErrorCallback(errorMessage) {
-    this.setState({
-      newSubcategoryInputErrorMsg: errorMessage,
-    })
-  }
-
-  editErrorCallback(errorMessage) {
-    this.setState({
-      editInputErrorMsg: errorMessage,
-    })
-  }
-
   getNodeComponent() {
     let addLinkClass = cx({
       [`${styles.hidden}`]: this.props.level === 3,
@@ -98,7 +86,7 @@ export default class CategoryNode extends Component {
     )
   }
 
-  onSubmitNewSubcategory(event) {
+  onSubmitNewSubcategory(event) { // eslint-disable-line react/sort-comp
     event.preventDefault()
     const inputValue = this.subCatFormRef.inputRef.input.value.trim()
 
@@ -108,18 +96,6 @@ export default class CategoryNode extends Component {
       this.saveNewSubcategorySuccessCallback.bind(this),
       this.saveNewSubcategoryErrorCallback.bind(this)
     )
-  }
-
-  clearNewSubcatInput() {
-    this.setState({
-      newSubcategoryInputErrorMsg: '',
-    })
-  }
-
-  clearEditInput() {
-    this.setState({
-      editInputErrorMsg: '',
-    })
   }
 
   onSubmitEdit(event) {
@@ -148,6 +124,30 @@ export default class CategoryNode extends Component {
         </span>
       </InlineAlert>
     )
+  }
+
+  editErrorCallback(errorMessage) {
+    this.setState({
+      editInputErrorMsg: errorMessage,
+    })
+  }
+
+  clearNewSubcatInput() {
+    this.setState({
+      newSubcategoryInputErrorMsg: '',
+    })
+  }
+
+  clearEditInput() {
+    this.setState({
+      editInputErrorMsg: '',
+    })
+  }
+
+  saveNewSubcategoryErrorCallback(errorMessage) {
+    this.setState({
+      newSubcategoryInputErrorMsg: errorMessage,
+    })
   }
 
   saveNewSubcategorySuccessCallback() {
