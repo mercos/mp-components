@@ -26,7 +26,7 @@ export default class CategoryNode extends Component {
     this.onClickNoInlineAlert = (event) => this.toggleInlineAlert(event)
     this.deleteCategoryHandler = (event) => this.deleteCategory(event)
     this.onClickLinkAddHandler = (event) => this.toggleNewCategoryInput(event)
-    this.onClickCancelNewCategoryHandler = (event) => this.toggleNewCategoryInput(event)
+    this.onClickCancelNewCategoryHandler = (event) => this.onClickCancelNewSubcategory(event)
     this.onSubmitNewSubcategoryHandler = (event) => this.onSubmitNewSubcategory(event)
     this.onChangeNewSubcatInputHandler = () => this.clearNewSubcatInput()
     this.onChangeEditInputHandler = () => this.clearEditInput()
@@ -195,6 +195,16 @@ export default class CategoryNode extends Component {
     this.setState({
       showEditForm: false,
       editInputErrorMsg: '',
+    })
+  }
+
+  onClickCancelNewSubcategory(event) {
+    event.preventDefault()
+
+    this.subCatFormRef.formRef.reset()
+    this.setState({
+      showNewCategoryInput: false,
+      newSubcategoryInputErrorMsg: '',
     })
   }
 
