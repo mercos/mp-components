@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.0.12
+- [fix] Clear error state for `CategoryNode`'s new category input
+
 ## 1.0.11
 - [new] `CategoryNode` now has a `CategoryForm` for adding and editing categories
 
