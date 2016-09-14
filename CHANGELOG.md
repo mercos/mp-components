@@ -1,8 +1,5 @@
 # Change Log
 
-## 1.0.13
-- [new] `Vertical` and `HorizontalCard` components
-
 ## 1.0.12
 - [fix] Clear error state for `CategoryNode`'s new category input
 
