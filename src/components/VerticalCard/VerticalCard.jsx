@@ -22,6 +22,7 @@ const VerticalCard = (props) => {
 VerticalCard.propTypes = {
   topContent: PropTypes.any.isRequired,
   bottomContent: PropTypes.any.isRequired,
+  className: PropTypes.string,
 }
 
 export default VerticalCard

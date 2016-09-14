@@ -19,4 +19,10 @@ const HorizontalCard = (props) => {
   )
 }
 
+HorizontalCard.propTypes = {
+  leftContent: PropTypes.any.isRequired,
+  rightContent: PropTypes.any.isRequired,
+  className: PropTypes.string,
+}
+
 export default HorizontalCard
