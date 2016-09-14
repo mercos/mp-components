@@ -74,8 +74,8 @@
     "react": "^15.3.1",
     "react-addons-test-utils": "^15.3.1",
     "react-dom": "^15.3.1",
-    "react-tooltip": "^3.1.6",
-    "sass-lint": "^1.9.0",
+    "react-tooltip": "^3.1.7",
+    "sass-lint": "^1.9.1",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2"

@@ -37,7 +37,8 @@ $mpc-button-info-bg-hover: darken($mpc-button-info-bg, 5%);
 $mpc-button-info-border-hover: darken($mpc-button-info-border, 5%);
 
 // Input
-$mpc-color-input-border: #ccc;
+$mpc-color-input-border: #CCC;
+$mpc-input-margin: 0;
 $mpc-color-input-inset: rgba(0, 0, 0, .075);
 $mpc-color-input-background: $white;
 $mpc-border-color-input-info: rgba(82, 168, 236, .8);
@@ -51,6 +52,15 @@ $mpc-node-level1-border-top: $athens-gray;
 // Link
 $mpc-color-link-default-visited: $meus-pedidos;
 $mpc-color-link-error-visited: $mpc-color-error;
+$mpc-link-margin: 0 10px;
+
+// VerticalCard
+$mpc-vertical-card-bg-color: $white;
+$mpc-vertical-card-divider-color: $athens-gray;
+
+// HorizontalCard
+$mpc-horizontal-card-bg-color: $white;
+$mpc-horizontal-card-divider-color: $athens-gray;
 
 // Spacing, sizing
 $mpc-text-container-padding: 12px;

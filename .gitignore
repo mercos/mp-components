@@ -36,3 +36,6 @@ node_modules
 
 # build folder
 lib
+
+# sass lint reports
+linters
