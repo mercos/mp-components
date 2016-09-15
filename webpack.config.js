@@ -13,7 +13,7 @@ module.exports = {
     Node: ['./src/components/Node/Node.jsx'],
     NodeOptions: ['./src/components/NodeOptions/NodeOptions.jsx'],
     VerticalCard: './src/components/VerticalCard/VerticalCard.jsx',
-    VerticalCard: './src/components/HorizontalCard/HorizontalCard.jsx'
+    HorizontalCard: './src/components/HorizontalCard/HorizontalCard.jsx'
   },
   output: {
     filename: '[name].js',
