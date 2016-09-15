@@ -1,6 +1,9 @@
 # Change Log
 
-## 1.0.13
+## 1.0.15
+- [fix] 'HorizontalCard' component was not compiling
+
+## 1.0.14
 - [new] `Vertical` and `HorizontalCard` components
 
 ## 1.0.12
