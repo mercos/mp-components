@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.16
+- [new] 'Card' component
+- [fix] 'HorizontalCard' and 'VerticalCard' removed
+
 ## 1.0.15
 - [fix] 'HorizontalCard' was not correctly declared in `webpack` config
 

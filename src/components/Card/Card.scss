@@ -1,0 +1,27 @@
+@import '../../styles/variables';
+
+.card {
+  min-width: 100px;
+  min-height: 100px;
+  background-color: $white;
+  border: 0;
+  padding: 15px;
+  margin: 0;
+  box-shadow: 0 1px 3px rgba(76, 82, 90, 0.15);
+}
+
+.card h1 {
+  color: $star-dust;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 17px;
+}
+
+.card p {
+  color: $fuscous-gray;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19px;
+}
