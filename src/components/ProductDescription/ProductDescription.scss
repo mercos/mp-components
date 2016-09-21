@@ -1,0 +1,25 @@
+@import '../../styles/variables';
+
+.productDescriptionContainer {
+  background-color: $white;
+  width: 273px;
+  height: 118px;
+  padding: 15px 10px;
+}
+
+.normalText, .mutedText, .unidadeText {
+  margin: 0 0 4px;
+  padding: 0;
+  color: $fuscous-gray;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.mutedText {
+  color: $star-dust;
+}
+
+.unidadeText {
+  margin-top: 9px;
+}

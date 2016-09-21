@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.productImageContainer {
+  background-color: $white;
+  width: 273px;
+  height: 176px;
+  text-align: center;
+  color: $star-dust;
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 176px;
+}
