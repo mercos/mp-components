@@ -8,8 +8,6 @@ function loadStories() {
   require('../stories/Node')
   require('../stories/CategoryNode')
   require('../stories/CategoryForm')
-  require('../stories/VerticalCard')
-  require('../stories/HorizontalCard')
 }
 
 configure(loadStories, module)
