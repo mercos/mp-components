@@ -5,7 +5,7 @@ const ProductImage = ({ imageURL }) => {
   const obterImageTag = (url) => {
     let imageTag = <span>Sem foto</span>
     if (url) {
-      imageTag = <img src={url} alt="dica do conteúdo" />
+      imageTag = <img src={url} className={styles.productImage} alt="dica do conteúdo" />
     }
     return imageTag
   }

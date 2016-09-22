@@ -5,8 +5,12 @@ import ProductImage from '../src/components/ProductImage/ProductImage.jsx'
 
 storiesOf('ProductImage', module)
 
-  .add('default', () => (
+  .add('with image', () => (
     <ProductImage imageURL="http://placehold.it/273x176" />
+  ))
+
+  .add('with big image', () => (
+    <ProductImage imageURL="http://placehold.it/500x500" />
   ))
 
   .add('without image', () => (
