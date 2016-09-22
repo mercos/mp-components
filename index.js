@@ -6,8 +6,10 @@ var Input = require('./lib/components/Input').default
 var Link = require('./lib/components/Link').default
 var Node = require('./lib/components/Node').default
 var NodeOptions = require('./lib/components/NodeOptions').default
-var VerticalCard = require('./lib/components/VerticalCard').default
-var HorizontalCard = require('./lib/components/HorizontalCard').default
+var Card = require('./lib/components/Card').default
+var ProductImage = require('./lib/components/ProductImage').default
+var ProductDescription = require('./lib/components/ProductDescription').default
+var ProductCard = require('./lib/components/ProductCard').default
 
 module.exports = {
   Button: Button,
@@ -18,6 +20,8 @@ module.exports = {
   Link: Link,
   Node: Node,
   NodeOptions: NodeOptions,
-  VerticalCard: VerticalCard,
-  HorizontalCard: HorizontalCard,
+  Card: Card,
+  ProductImage: ProductImage,
+  ProductDescription: ProductDescription,
+  ProductCard: ProductCard,
 }

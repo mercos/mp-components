@@ -8,10 +8,10 @@ function loadStories() {
   require('../stories/Node')
   require('../stories/CategoryNode')
   require('../stories/CategoryForm')
-  require('../stories/Card.jsx')
-  require('../stories/ProductImage.jsx')
-  require('../stories/ProductDescription.jsx')
-  require('../stories/ProductCard.jsx')
+  require('../stories/Card')
+  require('../stories/ProductImage')
+  require('../stories/ProductDescription')
+  require('../stories/ProductCard')
 }
 
 configure(loadStories, module)
