@@ -11,21 +11,6 @@ const ProductImage = require('./lib/components/ProductImage').default
 const ProductDescription = require('./lib/components/ProductDescription').default
 const ProductCard = require('./lib/components/ProductCard').default
 
-const source = {
-  Button: require('./src/components/Button').default,
-  CategoryNode: require('./src/components/CategoryNode').default,
-  CategoryForm: require('./src/components/CategoryForm').default,
-  InlineAlert: require('./src/components/InlineAlert').default,
-  Input: require('./src/components/Input').default,
-  Link: require('./src/components/Link').default,
-  Node: require('./src/components/Node').default,
-  NodeOptions: require('./src/components/NodeOptions').default,
-  Card: require('./src/components/Card').default,
-  ProductImage: require('./src/components/ProductImage').default,
-  ProductDescription: require('./src/components/ProductDescription').default,
-  ProductCard: require('./src/components/ProductCard').default,
-}
-
 module.exports = {
   Button,
   CategoryNode,
@@ -39,5 +24,4 @@ module.exports = {
   ProductImage,
   ProductDescription,
   ProductCard,
-  source,
 }
