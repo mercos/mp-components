@@ -24,8 +24,9 @@ module.exports = {
     libraryTarget: 'commonjs2',
   },
   externals: {
-    react: 'react',
-    'react-dom': 'react-dom'
+    'react': 'react',
+    'react-dom': 'react-dom',
+    'react-tooltip': 'react-tooltip'
   },
   module: {
     loaders: [{
