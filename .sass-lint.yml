@@ -2,10 +2,6 @@
 options:
   # Don't merge default rules
   merge-default-rules: false
-  # Set the formatter to 'html'
-  formatter: html
-  # Output file instead of logging results
-  output-file: 'linters/sass-lint.html'
 # File Options
 files:
   include: 'sass/**/*.s+(a|c)ss'

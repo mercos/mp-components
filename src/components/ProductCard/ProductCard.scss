@@ -2,18 +2,18 @@
 @import '../Card/Card';
 
 .productCardContainer {
-  @extend .card;
+  composes: card from '../Card/Card.scss';
   width: 273px;
   height: auto;
   padding: 0;
 }
 
 .divider {
-    background-color: $athens-gray;
-    border: 0 none;
-    color: $desert-storm;
-    height: 1px;
-    padding: 0;
-    margin: 0;
-    width: 273px;
+  margin: $mpc-product-card-margin;
+  background-color: $athens-gray;
+  border: 0 none;
+  color: $desert-storm;
+  height: 1px;
+  padding: 0;
+  width: 273px;
 }

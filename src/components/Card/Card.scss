@@ -1,12 +1,12 @@
 @import '../../styles/variables';
 
 .card {
+  margin: $mpc-product-card-margin;
   min-width: 100px;
   min-height: 100px;
   background-color: $white;
   border: 0;
   padding: 15px;
-  margin: 0;
   box-shadow: 0 1px 3px rgba(76, 82, 90, 0.15);
 }
 

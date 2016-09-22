@@ -4,7 +4,7 @@ import styles from './Node.scss'
 
 export default class Node extends Component {
   render() {
-    let classes = cx(
+    const classes = cx(
       this.props.className,
       styles[`nodeLevel${this.props.level}`],
       styles.node

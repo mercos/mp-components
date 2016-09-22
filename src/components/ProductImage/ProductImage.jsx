@@ -2,15 +2,17 @@ import React, { PropTypes } from 'react'
 import styles from './ProductImage.scss'
 
 const ProductImage = ({ imageURL }) => {
-
-  let imageTag = <span>Sem foto</span>
-  if (imageURL) {
-    imageTag = <img src={imageURL} alt="dica do conteúdo" />
+  const obterImageTag = (url) => {
+    let imageTag = <span>Sem foto</span>
+    if (url) {
+      imageTag = <img src={url} alt="dica do conteúdo" />
+    }
+    return imageTag
   }
 
   return (
     <div className={styles.productImageContainer}>
-      {imageTag}
+      {obterImageTag(imageURL)}
     </div>
   )
 }

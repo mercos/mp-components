@@ -8,7 +8,8 @@
 }
 
 .normalText, .mutedText, .unidadeText {
-  margin: 0 0 4px;
+  margin: $mpc-product-card-margin;
+  margin-bottom: 4px;
   padding: 0;
   color: $fuscous-gray;
   font-family: "Open Sans";

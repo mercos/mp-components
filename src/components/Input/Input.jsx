@@ -37,7 +37,7 @@ export default class Input extends Component {
 
   render() {
     const CONTEXT_CLASS_NAME = this.state.isValid ? this.props.context : 'error'
-    let classes = cx(
+    const classes = cx(
       this.props.className,
       styles.input,
       {

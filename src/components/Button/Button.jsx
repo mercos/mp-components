@@ -4,7 +4,7 @@ import styles from './Button.scss'
 
 export default class Button extends Component {
   render() {
-    let classes = cx(
+    const classes = cx(
       this.props.className,
       styles.button,
       {

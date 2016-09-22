@@ -4,7 +4,7 @@ import styles from './InlineAlert.scss'
 
 export default class InlineAlert extends Component {
   render() {
-    let classes = cx(
+    const classes = cx(
       this.props.className,
       {
         [`${styles.inlineAlert}`]: true,

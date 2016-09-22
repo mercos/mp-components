@@ -71,7 +71,7 @@ export default class CategoryNode extends Component {
   }
 
   getNodeComponent() {
-    let addLinkClass = cx({
+    const addLinkClass = cx({
       [`${styles.hidden}`]: this.props.level === 3,
     })
 

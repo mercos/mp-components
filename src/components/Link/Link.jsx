@@ -4,7 +4,7 @@ import styles from './Link.scss'
 
 export default class Link extends Component {
   render() {
-    let classes = cx(
+    const classes = cx(
       this.props.className,
       styles.link,
       styles[this.props.context],
