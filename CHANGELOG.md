@@ -1,11 +1,17 @@
 # Change Log
 
-## 1.1.1
+## 1.2.2
+- [fix] 'ProductCard' now have top and bottom margins
+
+## 1.2.1
 - [fix] 'ProductImage' now resize big images
 
-## 1.1.0
+## 1.2.0
 - [new] 'Card', 'ProductCard', 'ProductDescription', 'ProductImage' components
 - [removed] 'HorizontalCard' and 'VerticalCard'
+
+## 1.1.0
+- [fix] Problem when deploying a new version, please use the next version!
 
 ## 1.0.15
 - [fix] 'HorizontalCard' was not correctly declared in `webpack` config
