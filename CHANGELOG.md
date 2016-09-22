@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.1.1
+- [fix] 'ProductImage' now resize big images
+
 ## 1.1.0
 - [new] 'Card', 'ProductCard', 'ProductDescription', 'ProductImage' components
 - [removed] 'HorizontalCard' and 'VerticalCard'
