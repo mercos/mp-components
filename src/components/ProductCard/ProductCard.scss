@@ -3,13 +3,14 @@
 
 .productCardContainer {
   composes: card from '../Card/Card.scss';
+  margin: $mpc-product-card-margin;
   width: 273px;
   height: auto;
   padding: 0;
 }
 
 .divider {
-  margin: $mpc-product-card-margin;
+  margin: $mpc-divider-margin;
   background-color: $athens-gray;
   border: 0 none;
   color: $desert-storm;
