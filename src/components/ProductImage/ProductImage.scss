@@ -14,6 +14,7 @@
 }
 
 .productImage {
+  margin: $mpc-product-image-margin;
   max-height: 90%;
   max-width: 90%;
   width: auto;
@@ -23,5 +24,4 @@
   bottom: 0;
   left: 0;
   right: 0;
-  margin: auto;
 }
