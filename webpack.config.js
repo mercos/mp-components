@@ -12,8 +12,10 @@ module.exports = {
     Link: ['./src/components/Link/Link.jsx'],
     Node: ['./src/components/Node/Node.jsx'],
     NodeOptions: ['./src/components/NodeOptions/NodeOptions.jsx'],
-    VerticalCard: './src/components/VerticalCard/VerticalCard.jsx',
-    HorizontalCard: './src/components/HorizontalCard/HorizontalCard.jsx'
+    Card: ['./src/components/Card/Card.jsx'],
+    ProductCard: ['./src/components/ProductCard/ProductCard.jsx'],
+    ProductDescription: ['./src/components/ProductDescription/ProductDescription.jsx'],
+    ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
   },
   output: {
     filename: '[name].js',
