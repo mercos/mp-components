@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.0.17
+## 1.1.0
 - [new] 'Card', 'ProductCard', 'ProductDescription', 'ProductImage' components
 - [removed] 'HorizontalCard' and 'VerticalCard'
 
