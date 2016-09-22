@@ -39,3 +39,5 @@ lib
 
 # sass lint reports
 linters
+
+_gh-pages/
