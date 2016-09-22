@@ -1,27 +1,43 @@
-var Button = require('./lib/components/Button').default
-var CategoryNode = require('./lib/components/CategoryNode').default
-var CategoryForm = require('./lib/components/CategoryForm').default
-var InlineAlert = require('./lib/components/InlineAlert').default
-var Input = require('./lib/components/Input').default
-var Link = require('./lib/components/Link').default
-var Node = require('./lib/components/Node').default
-var NodeOptions = require('./lib/components/NodeOptions').default
-var Card = require('./lib/components/Card').default
-var ProductImage = require('./lib/components/ProductImage').default
-var ProductDescription = require('./lib/components/ProductDescription').default
-var ProductCard = require('./lib/components/ProductCard').default
+const Button = require('./lib/components/Button').default
+const CategoryNode = require('./lib/components/CategoryNode').default
+const CategoryForm = require('./lib/components/CategoryForm').default
+const InlineAlert = require('./lib/components/InlineAlert').default
+const Input = require('./lib/components/Input').default
+const Link = require('./lib/components/Link').default
+const Node = require('./lib/components/Node').default
+const NodeOptions = require('./lib/components/NodeOptions').default
+const Card = require('./lib/components/Card').default
+const ProductImage = require('./lib/components/ProductImage').default
+const ProductDescription = require('./lib/components/ProductDescription').default
+const ProductCard = require('./lib/components/ProductCard').default
+
+const source = {
+  Button: require('./src/components/Button').default,
+  CategoryNode: require('./src/components/CategoryNode').default,
+  CategoryForm: require('./src/components/CategoryForm').default,
+  InlineAlert: require('./src/components/InlineAlert').default,
+  Input: require('./src/components/Input').default,
+  Link: require('./src/components/Link').default,
+  Node: require('./src/components/Node').default,
+  NodeOptions: require('./src/components/NodeOptions').default,
+  Card: require('./src/components/Card').default,
+  ProductImage: require('./src/components/ProductImage').default,
+  ProductDescription: require('./src/components/ProductDescription').default,
+  ProductCard: require('./src/components/ProductCard').default,
+}
 
 module.exports = {
-  Button: Button,
-  CategoryNode: CategoryNode,
-  CategoryForm: CategoryForm,
-  InlineAlert: InlineAlert,
-  Input: Input,
-  Link: Link,
-  Node: Node,
-  NodeOptions: NodeOptions,
-  Card: Card,
-  ProductImage: ProductImage,
-  ProductDescription: ProductDescription,
-  ProductCard: ProductCard,
+  Button,
+  CategoryNode,
+  CategoryForm,
+  InlineAlert,
+  Input,
+  Link,
+  Node,
+  NodeOptions,
+  Card,
+  ProductImage,
+  ProductDescription,
+  ProductCard,
+  source,
 }
