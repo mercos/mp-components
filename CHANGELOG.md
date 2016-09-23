@@ -1,6 +1,9 @@
 # Change Log
 
 ## 1.2.2
+- [fix] Revert `index.js` syntax to ES5
+
+## 1.2.2
 - [fix] 'ProductCard' now have top and bottom margins
 
 ## 1.2.1
