@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.2.4
+## 1.3.0
 - [new] Input can now have an inline addon
 - [changed] Product card is now responsive
 
