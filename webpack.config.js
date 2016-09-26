@@ -16,6 +16,7 @@ module.exports = {
     ProductCard: ['./src/components/ProductCard/ProductCard.jsx'],
     ProductDescription: ['./src/components/ProductDescription/ProductDescription.jsx'],
     ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
+    ResponsiveComponentExample: ['./src/components/ResponsiveComponentExample/ResponsiveComponentExample.jsx'],
   },
   output: {
     filename: '[name].js',

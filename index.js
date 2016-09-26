@@ -10,6 +10,7 @@ var Card = require('./lib/components/Card').default
 var ProductImage = require('./lib/components/ProductImage').default
 var ProductDescription = require('./lib/components/ProductDescription').default
 var ProductCard = require('./lib/components/ProductCard').default
+var ResponsiveComponentExample = require('./lib/components/ResponsiveComponentExample').default
 
 module.exports = {
   Button: Button,
@@ -24,4 +25,5 @@ module.exports = {
   ProductImage: ProductImage,
   ProductDescription: ProductDescription,
   ProductCard: ProductCard,
+  ResponsiveComponentExample: ResponsiveComponentExample,
 }
