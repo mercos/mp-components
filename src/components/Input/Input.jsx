@@ -26,6 +26,17 @@ export default class Input extends Component {
     })
   }
 
+  getInlineAddon() {
+    if (this.props.hasInnerLeftAddon) {
+      return (
+        <span className={styles.addon}>
+          {this.props.inlineAddon}
+        </span>
+      )
+    }
+    return ''
+  }
+
   clearInvalidState() {
     if (!this.state.isValid) {
       this.setState({
@@ -44,11 +55,18 @@ export default class Input extends Component {
         [styles[this.props.size]]: true,
         [styles[CONTEXT_CLASS_NAME]]: true,
         [`${styles.hasAddonRight}`]: this.props.hasAddonRight,
+        [`${styles.hasInnerLeftAddon}`]: this.props.hasInnerLeftAddon,
       }
     )
 
+    const innerAddonClasses = cx({
+      [styles.innerAddon]: this.props.hasInnerLeftAddon,
+      [styles.innerLeftAddon]: this.props.hasInnerLeftAddon,
+    })
+
     return (
-      <span>
+      <span className={innerAddonClasses}>
+        {this.getInlineAddon()}
         <input
           {...this.props}
           onChange={this.onChangeHandler}
@@ -86,6 +104,8 @@ Input.propTypes = {
   errorMessage: PropTypes.string,
   id: PropTypes.string.isRequired,
   hasAddonRight: PropTypes.bool,
+  hasInnerLeftAddon: PropTypes.bool,
   onChange: PropTypes.func,
   className: PropTypes.string,
+  inlineAddon: PropTypes.node,
 }
