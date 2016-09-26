@@ -26,7 +26,9 @@ module.exports = {
   externals: {
     'react': 'react',
     'react-dom': 'react-dom',
-    'react-tooltip': 'react-tooltip'
+    'react-tooltip': 'react-tooltip',
+    'react-container-query': 'react-container-query'
+
   },
   module: {
     loaders: [{
