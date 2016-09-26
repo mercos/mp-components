@@ -27,9 +27,12 @@ export default class Input extends Component {
   }
 
   getInlineAddon() {
+    const classes = cx(styles.addon, {
+      [styles[this.props.size]]: true,
+    })
     if (this.props.hasInnerLeftAddon) {
       return (
-        <span className={styles.addon}>
+        <span className={classes}>
           {this.props.inlineAddon}
         </span>
       )
@@ -61,7 +64,6 @@ export default class Input extends Component {
 
     const innerAddonClasses = cx({
       [styles.innerAddon]: this.props.hasInnerLeftAddon,
-      [styles.innerLeftAddon]: this.props.hasInnerLeftAddon,
     })
 
     return (
@@ -91,6 +93,7 @@ Input.defaultProps = {
   size: 'medium',
   context: 'default',
   hasAddonRight: false,
+  hasInnerLeftAddon: false,
   errorMessage: '',
   onChange: () => {},
   className: '',

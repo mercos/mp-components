@@ -169,16 +169,29 @@
 /* Inner addon*/
 .innerAddon {
     position: relative;
+
+    .addon {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .big {
+      padding: 11px;
+    }
+
+    .medium {
+      padding: 10px;
+    }
+
+    .small {
+      padding: 8px;
+    }
 }
 
-.innerAddon .addon {
-  position: absolute;
-  padding: 10px;
-  pointer-events: none;
-}
-
-.leftAddon .addon  {
-  left:  0px;
+.leftAddon {
+  .addon {
+    left:  0px;
+  }
 }
 
 .hasInnerLeftAddon {
