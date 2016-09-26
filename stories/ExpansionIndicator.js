@@ -18,7 +18,7 @@ storiesOf('ExpansionIndicator', module)
     </div>
   ))
 
-  .add('expanded active', () => (
+  .add('active and expanded', () => (
     <div style={{backgroundColor: '#0192F6', padding: 10, width: 200}}>
       <ExpansionIndicator expanded active />
     </div>
