@@ -1,0 +1,36 @@
+@import '../../styles/variables';
+
+.ExpansionIndicator {
+  color: $mpc-expansion-indicator-color;
+  border: 2px solid $mpc-expansion-indicator-color;
+  border-radius: 50%;
+  justify-content: center;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+
+  &.active {
+    color: $mpc-expansion-indicator-active-color;
+    border-color: $mpc-expansion-indicator-active-color;
+  }
+
+  &:before {
+    content: '+';
+    margin-bottom: $mpc-expansion-indicator-margin-bottom;
+  }
+
+  &.expanded {
+    color: $mpc-expansion-indicator-expanded-color;
+    border-color: $mpc-expansion-indicator-expanded-color;
+
+    &.active {
+      color: $mpc-expansion-indicator-active-color;
+      border-color: $mpc-expansion-indicator-active-color;
+    }
+
+    &:before {
+      content: '-';
+      margin-bottom: $mpc-expansion-indicator-margin-bottom;
+    }
+  }
+}

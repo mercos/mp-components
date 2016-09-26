@@ -12,6 +12,7 @@ function loadStories() {
   require('../stories/ProductImage')
   require('../stories/ProductDescription')
   require('../stories/ProductCard')
+  require('../stories/ExpansionIndicator')
 }
 
 configure(loadStories, module)
