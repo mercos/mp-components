@@ -168,24 +168,24 @@
 
 /* Inner addon*/
 .innerAddon {
-    position: relative;
+  position: relative;
 
-    .addon {
-      position: absolute;
-      pointer-events: none;
-    }
+  .addon {
+    position: absolute;
+    pointer-events: none;
+  }
 
-    .big {
-      padding: 11px;
-    }
+  .big {
+    padding: 11px;
+  }
 
-    .medium {
-      padding: 10px;
-    }
+  .medium {
+    padding: 10px;
+  }
 
-    .small {
-      padding: 8px;
-    }
+  .small {
+    padding: 8px;
+  }
 }
 
 .leftAddon {
