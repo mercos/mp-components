@@ -8,13 +8,13 @@ class ExpansionIndicator extends Component {
       styles.ExpansionIndicator,
       this.props.className,
       {
-        [styles['expanded']]: this.props.expanded,
-        [styles['active']]: this.props.active,
+        [styles.expanded]: this.props.expanded,
+        [styles.active]: this.props.active,
       }
     )
 
     return (
-      <div className={classes} style={{width: this.props.width, height: this.props.height}} />
+      <div className={classes} style={{ width: this.props.width, height: this.props.height }} />
     )
   }
 }
