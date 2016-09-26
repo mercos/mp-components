@@ -7,6 +7,10 @@
   width: 273px;
   height: auto;
   padding: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .divider {
@@ -17,4 +21,8 @@
   height: 1px;
   padding: 0;
   width: 273px;
+}
+
+.productCardDesktop {
+  flex-direction: row;
 }

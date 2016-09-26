@@ -1,0 +1,19 @@
+@import '../../styles/variables';
+
+.box {
+  min-width: 100px;
+  min-height: 100px;
+  padding: 10px;
+}
+
+.boxSm {
+  background-color: $vista-blue;
+}
+
+.boxMd {
+  background-color: $porsche;
+}
+
+.boxLg {
+  background-color: $carnation;
+}
