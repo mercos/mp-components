@@ -1,6 +1,10 @@
 # Change Log
 
-## 1.2.2
+## 1.2.4
+- [new] Input can now have an inline addon
+- [changed] Product card is now responsive
+
+## 1.2.3
 - [fix] Revert `index.js` syntax to ES5
 
 ## 1.2.2
