@@ -7,9 +7,13 @@ import ProductDescription from '../ProductDescription/ProductDescription.jsx'
 
 class ProductCardBase extends Component {
   render() {
+    const isHorizontal = this.props.containerQuery[styles.productCardHorizontal]
     return (
       <div className={cx(styles.productCardContainer, this.props.containerQuery)} style={{ width: this.props.width }}>
-        <ProductImage imageURL={this.props.imageURL} />
+        <ProductImage
+          isHorizontal={isHorizontal}
+          imageURL={this.props.imageURL}
+        />
         <ProductDescription
           name={this.props.name}
           code={this.props.code}
@@ -31,7 +35,7 @@ ProductCardBase.propTypes = {
 
 const query = {}
 
-query[styles.productCardDesktop] = {
+query[styles.productCardHorizontal] = {
   minWidth: 320,
 }
 

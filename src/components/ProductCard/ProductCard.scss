@@ -3,13 +3,12 @@
 
 .productCardContainer {
   composes: card from '../Card/Card.scss';
+  display: flex;
   margin: $mpc-product-card-margin;
-  width: 273px;
   height: auto;
   padding: 0;
   position: relative;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
 }
 
@@ -20,9 +19,8 @@
   color: $desert-storm;
   height: 1px;
   padding: 0;
-  width: 273px;
 }
 
-.productCardDesktop {
+.productCardHorizontal {
   flex-direction: row;
 }

@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.4
+- [fix] Fix 'ProductCard' responsiveness
+
 ## 1.3.1
 - [fix] Fix react-container-query dependency
 
