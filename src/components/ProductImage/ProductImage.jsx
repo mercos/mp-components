@@ -3,9 +3,7 @@ import cx from 'classnames'
 import styles from './ProductImage.scss'
 
 const ProductImage = ({ imageURL, isHorizontal }) => {
-  const modoExibicao = () => {
-    return (isHorizontal) ? styles.smallImageContainer : ''
-  }
+  const modoExibicao = (isHorizontal) ? styles.smallImageContainer : ''
 
   const obterImageTag = (url) => {
     let imageTag = <span>Sem foto</span>
