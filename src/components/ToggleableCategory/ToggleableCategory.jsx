@@ -11,9 +11,9 @@ class ToggleableCategory extends Component {
           <ExpansionIndicator active={this.props.active} expanded={this.props.open} />
         </span>
       )
-    } else {
-      return null
     }
+
+    return null
   }
 
   render() {
@@ -24,7 +24,7 @@ class ToggleableCategory extends Component {
     const contentClasses = cx(
       styles[`level${this.props.level}`],
       styles.content,
-      {[styles.active]: this.props.active}
+      { [styles.active]: this.props.active }
     )
 
     return (
@@ -56,6 +56,7 @@ ToggleableCategory.propTypes = {
   active: PropTypes.bool,
   open: PropTypes.bool,
   level: PropTypes.number,
+  children: PropTypes.any,
 }
 
 export default ToggleableCategory
