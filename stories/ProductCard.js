@@ -34,13 +34,3 @@ storiesOf('ProductCard', module)
       width={320}
     />
   ))
-
-  .add('responsive card 500px', () => (
-    <ProductCard
-      name="Produto 1"
-      code="0101"
-      unitOfMeasure="Unidade"
-      imageURL="http://placehold.it/273x176"
-      width={500}
-    />
-  ))
