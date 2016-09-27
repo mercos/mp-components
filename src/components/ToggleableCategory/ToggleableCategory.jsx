@@ -28,7 +28,7 @@ class ToggleableCategory extends Component {
     )
 
     return (
-      <li className={componentClasses}>
+      <li {...this.props} className={componentClasses}>
         <div className={contentClasses}>
           <span className={styles.label}>
             {this.props.label}

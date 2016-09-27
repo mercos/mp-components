@@ -42,6 +42,12 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
+  .add('with onClick action', () => (
+    <ul style={{width: 300, padding: 0}}>
+      <ToggleableCategory label="Smartphones" onClick={action('onClick')} />
+    </ul>
+  ))
+
   .add('nested', () => (
     <div style={{width: 300}}>
       <ul style={ulStyle}>
