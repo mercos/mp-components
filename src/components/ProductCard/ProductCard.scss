@@ -4,7 +4,6 @@
 .productCardContainer {
   composes: card from '../Card/Card.scss';
   margin: $mpc-product-card-margin;
-  width: 273px;
   height: auto;
   padding: 0;
   position: relative;
@@ -20,7 +19,6 @@
   color: $desert-storm;
   height: 1px;
   padding: 0;
-  width: 273px;
 }
 
 .productCardDesktop {
