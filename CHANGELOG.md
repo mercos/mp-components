@@ -1,6 +1,6 @@
 # Change Log
 
-## 1.3.2
+## 1.3.4
 - [fix] Fix 'ProductCard' responsiveness
 
 ## 1.3.1
