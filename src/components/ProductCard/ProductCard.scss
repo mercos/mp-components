@@ -3,12 +3,12 @@
 
 .productCardContainer {
   composes: card from '../Card/Card.scss';
+  display: flex;
   margin: $mpc-product-card-margin;
   height: auto;
   padding: 0;
   position: relative;
   overflow: hidden;
-  display: flex;
   flex-direction: column;
 }
 
