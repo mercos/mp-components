@@ -8,6 +8,8 @@ var Node = require('./lib/components/Node').default
 var NodeOptions = require('./lib/components/NodeOptions').default
 var Card = require('./lib/components/Card').default
 var ProductImage = require('./lib/components/ProductImage').default
+var ExpansionIndicator = require('./lib/components/ExpansionIndicator').default
+var ToggleableCategory = require('./lib/components/ToggleableCategory').default
 
 module.exports = {
   Button: Button,
@@ -20,4 +22,6 @@ module.exports = {
   NodeOptions: NodeOptions,
   Card: Card,
   ProductImage: ProductImage,
+  ExpansionIndicator: ExpansionIndicator,
+  ToggleableCategory: ToggleableCategory,
 }
