@@ -14,6 +14,7 @@ function loadStories() {
   require('../stories/ProductCard')
   require('../stories/ResponsiveComponentExample')
   require('../stories/ExpansionIndicator')
+  require('../stories/ToggleableCategory')
 }
 
 configure(loadStories, module)

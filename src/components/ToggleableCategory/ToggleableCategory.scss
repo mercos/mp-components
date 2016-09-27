@@ -1,0 +1,46 @@
+@import '../../styles/variables';
+
+.component {
+  list-style: none;
+  background-color: $white;
+
+  .content {
+    display: flex;
+    padding: $mpc-toggleable-category-padding;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 600;
+
+    &:hover {
+      background-color: $mpc-toggleable-category-hover-bg;
+    }
+
+    &.active {
+      background-color: $mpc-toggleable-category-active-bg;
+      color: $mpc-toggleable-category-active-color;
+    }
+
+    &.level2 {
+      padding-left: $mpc-toggleable-category-lvl2-padding-left;
+      font-weight: 400;
+    }
+
+    &.level3 {
+      padding-left: $mpc-toggleable-category-lvl3-padding-left;
+      font-weight: 400;
+      color: $meus-pedidos;
+
+      &.active {
+        background-color: $mpc-toggleable-category-lvl3-active-bg;
+      }
+    }
+  }
+
+  .label {
+    font-size: 12px;
+  }
+
+  .indicator {
+    margin-left: auto;
+  }
+}

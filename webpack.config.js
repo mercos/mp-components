@@ -16,6 +16,7 @@ module.exports = {
     ProductCard: ['./src/components/ProductCard/ProductCard.jsx'],
     ProductDescription: ['./src/components/ProductDescription/ProductDescription.jsx'],
     ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
+    ExpansionIndicator: ['./src/components/ExpansionIndicator/ExpansionIndicator.jsx'],
   },
   output: {
     filename: '[name].js',
