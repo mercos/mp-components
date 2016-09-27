@@ -12,6 +12,7 @@ var ProductDescription = require('./lib/components/ProductDescription').default
 var ProductCard = require('./lib/components/ProductCard').default
 var ExpansionIndicator = require('./lib/components/ExpansionIndicator').default
 var ResponsiveComponentExample = require('./lib/components/ResponsiveComponentExample').default
+var ToggleableCategory = require('./lib/components/ToggleableCategory').default
 
 module.exports = {
   Button: Button,
@@ -28,4 +29,5 @@ module.exports = {
   ProductCard: ProductCard,
   ExpansionIndicator: ExpansionIndicator,
   ResponsiveComponentExample: ResponsiveComponentExample,
+  ToggleableCategory: ToggleableCategory,
 }

@@ -18,6 +18,7 @@ module.exports = {
     ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
     ExpansionIndicator: ['./src/components/ExpansionIndicator/ExpansionIndicator.jsx'],
     ResponsiveComponentExample: ['./src/components/ResponsiveComponentExample/ResponsiveComponentExample.jsx'],
+    ToggleableCategory: ['./src/components/ToggleableCategory/ToggleableCategory.jsx']
   },
   output: {
     filename: '[name].js',
