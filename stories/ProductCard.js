@@ -15,25 +15,6 @@ storiesOf('ProductCard', module)
     />
   ))
 
-  .add('two cards without image', () => (
-    <div>
-      <ProductCard
-        name="Produto 1"
-        code="0101"
-        unitOfMeasure="Unidade"
-        imageURL=""
-        width={273}
-      />
-      <ProductCard
-        name="Produto 2"
-        code="0202"
-        unitOfMeasure="Unidade"
-        imageURL=""
-        width={273}
-      />
-    </div>
-  ))
-
   .add('with image', () => (
     <ProductCard
       name="Nome do Produto"
