@@ -3,9 +3,9 @@ import cx from 'classnames'
 import styles from './ProductImage.scss'
 
 const ProductImage = ({ imageURL, isHorizontal }) => {
-  const modoExibicao = (isHorizontal) ? styles.smallImageContainer : ''
+  const responsiveClasses = (isHorizontal) ? styles.smallImageContainer : ''
 
-  const obterImageTag = (url) => {
+  const getImageTag = (url) => {
     let imageTag = <span>Sem foto</span>
     if (url) {
       imageTag = <img src={url} className={styles.productImage} alt="dica do conteúdo" />
@@ -14,8 +14,8 @@ const ProductImage = ({ imageURL, isHorizontal }) => {
   }
 
   return (
-    <div className={cx(styles.productImageContainer, modoExibicao())}>
-      {obterImageTag(imageURL)}
+    <div className={cx(styles.productImageContainer, responsiveClasses)}>
+      {getImageTag(imageURL)}
     </div>
   )
 }
