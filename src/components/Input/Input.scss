@@ -165,3 +165,35 @@
     }
   }
 }
+
+/* Inner addon*/
+.innerAddon {
+  position: relative;
+
+  .addon {
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .big {
+    padding: 11px;
+  }
+
+  .medium {
+    padding: 10px;
+  }
+
+  .small {
+    padding: 8px;
+  }
+}
+
+.leftAddon {
+  .addon {
+    left:  0px;
+  }
+}
+
+.hasInnerLeftAddon {
+  padding-left: 30px !important;
+}

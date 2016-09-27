@@ -11,6 +11,7 @@ var ProductImage = require('./lib/components/ProductImage').default
 var ProductDescription = require('./lib/components/ProductDescription').default
 var ProductCard = require('./lib/components/ProductCard').default
 var ExpansionIndicator = require('./lib/components/ExpansionIndicator').default
+var ResponsiveComponentExample = require('./lib/components/ResponsiveComponentExample').default
 
 module.exports = {
   Button: Button,
@@ -26,4 +27,5 @@ module.exports = {
   ProductDescription: ProductDescription,
   ProductCard: ProductCard,
   ExpansionIndicator: ExpansionIndicator,
+  ResponsiveComponentExample: ResponsiveComponentExample,
 }

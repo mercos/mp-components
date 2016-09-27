@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import classnames from 'classnames'
-import { applyContainerQuery } from 'react-container-query'
+import { applyContainerQuery } from 'react-container-query/dist/react-container-query.min'
 import styles from './ResponsiveComponentExample.scss'
 
 class ResponsiveComponentExampleBase extends Component {
@@ -18,7 +18,7 @@ ResponsiveComponentExampleBase.propTypes = {
   width: PropTypes.number,
 }
 
-let query = {}
+const query = {}
 
 query[styles.boxSm] = {
   minWidth: 320,

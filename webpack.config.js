@@ -17,6 +17,7 @@ module.exports = {
     ProductDescription: ['./src/components/ProductDescription/ProductDescription.jsx'],
     ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
     ExpansionIndicator: ['./src/components/ExpansionIndicator/ExpansionIndicator.jsx'],
+    ResponsiveComponentExample: ['./src/components/ResponsiveComponentExample/ResponsiveComponentExample.jsx'],
   },
   output: {
     filename: '[name].js',
@@ -27,7 +28,9 @@ module.exports = {
   externals: {
     'react': 'react',
     'react-dom': 'react-dom',
-    'react-tooltip': 'react-tooltip'
+    'react-tooltip': 'react-tooltip',
+    'react-container-query': 'react-container-query'
+
   },
   module: {
     loaders: [{
