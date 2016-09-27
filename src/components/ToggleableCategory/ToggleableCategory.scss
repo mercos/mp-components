@@ -28,10 +28,10 @@
     &.level3 {
       padding-left: $mpc-toggleable-category-lvl3-padding-left;
       font-weight: 400;
-      color: $meus-pedidos;
+      color: $mpc-toggleable-category-lvl3-color;;
 
       &.active {
-        background-color: $mpc-toggleable-category-lvl3-active-bg;
+        color: $mpc-toggleable-category-active-color;
       }
     }
   }

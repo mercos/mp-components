@@ -48,10 +48,10 @@ storiesOf('ToggleableCategory', module)
         <ToggleableCategory label="Smartphones" open>
           <ul style={ulStyle}>
             <ToggleableCategory label="Samsung" level={2} />
-            <ToggleableCategory label="Apple" level={2} active open>
+            <ToggleableCategory label="Apple" level={2} open>
               <ul style={ulStyle}>
-                <ToggleableCategory label="iPhone 7" level={3} />
-                <ToggleableCategory label="iPhone 7 Plus" level={3} active />
+                <ToggleableCategory label="iPhone 7" level={3} active />
+                <ToggleableCategory label="iPhone 7 Plus" level={3} />
                 <ToggleableCategory label="iPod" level={3} />
               </ul>
             </ToggleableCategory>
