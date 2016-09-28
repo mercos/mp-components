@@ -10,9 +10,8 @@ function loadStories() {
   require('../stories/CategoryForm')
   require('../stories/Card')
   require('../stories/ProductImage')
-  require('../stories/ProductDescription')
-  require('../stories/ProductCard')
-  require('../stories/ResponsiveComponentExample')
+  require('../stories/ExpansionIndicator')
+  require('../stories/ToggleableCategory')
 }
 
 configure(loadStories, module)

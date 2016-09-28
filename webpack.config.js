@@ -13,10 +13,9 @@ module.exports = {
     Node: ['./src/components/Node/Node.jsx'],
     NodeOptions: ['./src/components/NodeOptions/NodeOptions.jsx'],
     Card: ['./src/components/Card/Card.jsx'],
-    ProductCard: ['./src/components/ProductCard/ProductCard.jsx'],
-    ProductDescription: ['./src/components/ProductDescription/ProductDescription.jsx'],
     ProductImage: ['./src/components/ProductImage/ProductImage.jsx'],
-    ResponsiveComponentExample: ['./src/components/ResponsiveComponentExample/ResponsiveComponentExample.jsx'],
+    ExpansionIndicator: ['./src/components/ExpansionIndicator/ExpansionIndicator.jsx'],
+    ToggleableCategory: ['./src/components/ToggleableCategory/ToggleableCategory.jsx']
   },
   output: {
     filename: '[name].js',
@@ -28,8 +27,6 @@ module.exports = {
     'react': 'react',
     'react-dom': 'react-dom',
     'react-tooltip': 'react-tooltip',
-    'react-container-query': 'react-container-query'
-
   },
   module: {
     loaders: [{
