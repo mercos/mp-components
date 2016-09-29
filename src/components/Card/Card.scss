@@ -1,10 +1,10 @@
 @import '../../styles/variables';
 
 .card {
-  display: flex;
-  margin: $mpc-product-card-margin;
+  margin: $mpc-card-margin;
   min-width: 100px;
-  min-height: 100px;
+  min-height: 10px;
+  font-size: 14px;
   background-color: $white;
   border: 0;
   padding: 15px;
@@ -16,7 +16,7 @@
   font-family: "Open Sans";
   font-size: 12px;
   font-weight: 400;
-  line-height: 17px;
+  line-height: 20px;
 }
 
 .card p {
@@ -24,5 +24,6 @@
   font-family: "Open Sans";
   font-size: 14px;
   font-weight: 400;
-  line-height: 19px;
+  line-height: 20px;
+  margin-bottom: 0px
 }
