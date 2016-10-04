@@ -42,9 +42,13 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
-  .add('with onClick action', () => (
+  .add('onClickLabel + onClickToggle', () => (
     <ul style={{width: 300, padding: 0}}>
-      <ToggleableCategory label="Smartphones" onClick={action('onClick')} />
+      <ToggleableCategory
+        label="Smartphones"
+        onClickLabel={action('onClickLabel')}
+        onClickToggle={action('onClickToggle')}
+      />
     </ul>
   ))
 
