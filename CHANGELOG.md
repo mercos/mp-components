@@ -1,6 +1,10 @@
 # Change Log
 
-## 1.3.2
+## 1.3.5
+- [new] Improved `ProductImage` behavior
+- [new] `ToggleableCategory` props: `onClickLabel` and `onClickToggle`
+
+## 1.3.4
 - [new] `ExpansionIndicator` and `ToggleableCategory`
 - [removed] `ProductCard` and `ProductDescription`
 
