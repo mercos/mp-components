@@ -2,7 +2,7 @@
 `mp-components` is a pack of React components originally created for [Meus Pedidos](https://meuspedidos.com.br), an online sales force solution.  
 
 # Internal development
-- Setup Meus Pedidos' NPM credentials using [this step-by-step](https://gist.github.com/coolaj86/1318304)
+- Setup Meus Pedidos' NPM credentials using only the first part of [this step-by-step](https://gist.github.com/coolaj86/1318304)
 - `$ git clone git@github.com:meuspedidos/mp-components.git`
 - `$ cd mp-components`
 - Fire up `react-storybook` using `$ npm run storybook` then navigate to http://0.0.0.0:9001
