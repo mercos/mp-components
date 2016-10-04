@@ -7,7 +7,7 @@ class ToggleableCategory extends Component {
   getIndicator(level) {
     if (level < 3) {
       return (
-        <span className={styles.indicator}>
+        <span className={styles.indicator} onClick={this.props.onClickToggle}>
           <ExpansionIndicator active={this.props.active} expanded={this.props.open} />
         </span>
       )
@@ -30,7 +30,7 @@ class ToggleableCategory extends Component {
     return (
       <li {...this.props} className={componentClasses}>
         <div className={contentClasses}>
-          <span className={styles.label}>
+          <span className={styles.label} onClick={this.props.onClickLabel}>
             {this.props.label}
           </span>
           {this.getIndicator(this.props.level)}
@@ -48,6 +48,8 @@ ToggleableCategory.defaultProps = {
   active: false,
   open: false,
   level: 1,
+  onClickToggle: () => {},
+  onClickLabel: () => {},
 }
 
 ToggleableCategory.propTypes = {
@@ -57,6 +59,8 @@ ToggleableCategory.propTypes = {
   open: PropTypes.bool,
   level: PropTypes.number,
   children: PropTypes.any,
+  onClickToggle: PropTypes.func,
+  onClickLabel: PropTypes.func,
 }
 
 export default ToggleableCategory
