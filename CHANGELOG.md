@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.6
+- [fix] Simplified `ToggleableCategory`
+
 ## 1.3.5
 - [new] Improved `ProductImage` behavior
 - [new] `ToggleableCategory` props: `onClickLabel` and `onClickToggle`
