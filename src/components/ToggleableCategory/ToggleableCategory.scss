@@ -9,6 +9,7 @@
     padding: $mpc-toggleable-category-padding;
     align-items: center;
     font-weight: 600;
+    cursor: pointer;
 
     &:hover {
       background-color: $mpc-toggleable-category-hover-bg;
@@ -37,7 +38,6 @@
 
   .label {
     font-size: 12px;
-    cursor: pointer;
   }
 
   .indicator {
