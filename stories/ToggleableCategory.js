@@ -18,9 +18,15 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
-  .add('active', () => (
+  .add('active and open', () => (
     <ul style={{width: 300, padding: 0}}>
-      <ToggleableCategory label="Smartphones" active />
+      <ToggleableCategory label="Smartphones" active open />
+    </ul>
+  ))
+
+  .add('just open', () => (
+    <ul style={{width: 300, padding: 0}}>
+      <ToggleableCategory label="Smartphones" open />
     </ul>
   ))
 
@@ -36,11 +42,12 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
-  .add('onClick', () => (
+  .add('onClickLabel + onClickToggle', () => (
     <ul style={{width: 300, padding: 0}}>
       <ToggleableCategory
         label="Smartphones"
-        onClick={action('onClick')}
+        onClickLabel={action('onClickLabel')}
+        onClickToggle={action('onClickToggle')}
       />
     </ul>
   ))
@@ -48,17 +55,17 @@ storiesOf('ToggleableCategory', module)
   .add('nested', () => (
     <div style={{width: 300}}>
       <ul style={ulStyle}>
-        <ToggleableCategory label="Smartphones">
+        <ToggleableCategory label="Smartphones" open>
           <ul style={ulStyle}>
             <ToggleableCategory label="Samsung" level={2} />
-            <ToggleableCategory label="Apple" level={2}>
+            <ToggleableCategory label="Apple" level={2} open>
               <ul style={ulStyle}>
                 <ToggleableCategory label="iPhone 7" level={3} active />
                 <ToggleableCategory label="iPhone 7 Plus" level={3} />
                 <ToggleableCategory label="iPod" level={3} />
               </ul>
             </ToggleableCategory>
-            <ToggleableCategory label="LG" level={2}>
+            <ToggleableCategory label="LG" level={2} open>
               <ul style={ulStyle}>
                 <ToggleableCategory label="K10" level={3} />
                 <ToggleableCategory label="G4" level={3} />
