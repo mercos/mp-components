@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.7
+- [fix] `ToggleableCategory` on hover has a blue color for normal items
+
 ## 1.3.6
 - [fix] Simplified `ToggleableCategory`
 
