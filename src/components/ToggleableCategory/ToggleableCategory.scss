@@ -13,11 +13,16 @@
 
     &:hover {
       background-color: $mpc-toggleable-category-hover-bg;
+      color: $mpc-toggleable-category-lvl3-hover-color;
     }
 
     &.active {
       background-color: $mpc-toggleable-category-active-bg;
       color: $mpc-toggleable-category-active-color;
+
+      &:hover {
+        color: $white;
+      }
     }
 
     &.level2 {
@@ -28,10 +33,18 @@
     &.level3 {
       padding-left: $mpc-toggleable-category-lvl3-padding-left;
       font-weight: 400;
-      color: $mpc-toggleable-category-lvl3-color;;
+      color: $mpc-toggleable-category-lvl3-color;
 
       &.active {
         color: $mpc-toggleable-category-active-color;
+
+        &:hover {
+          color: $white;
+        }
+      }
+
+      &:hover {
+        color: $mpc-toggleable-category-lvl3-hover-color;
       }
     }
   }
