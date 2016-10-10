@@ -18,15 +18,9 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
-  .add('active and open', () => (
+  .add('active', () => (
     <ul style={{width: 300, padding: 0}}>
-      <ToggleableCategory label="Smartphones" active open />
-    </ul>
-  ))
-
-  .add('just open', () => (
-    <ul style={{width: 300, padding: 0}}>
-      <ToggleableCategory label="Smartphones" open />
+      <ToggleableCategory label="Smartphones" active />
     </ul>
   ))
 
@@ -42,12 +36,11 @@ storiesOf('ToggleableCategory', module)
     </ul>
   ))
 
-  .add('onClickLabel + onClickToggle', () => (
+  .add('onClick', () => (
     <ul style={{width: 300, padding: 0}}>
       <ToggleableCategory
         label="Smartphones"
-        onClickLabel={action('onClickLabel')}
-        onClickToggle={action('onClickToggle')}
+        onClick={action('onClick')}
       />
     </ul>
   ))
