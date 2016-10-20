@@ -14,7 +14,7 @@ storiesOf('Input', module)
   ))
 
   .add('error', () => (
-    <Input placeholder="Type your text here" context="error" id="error" />
+    <Input placeholder="Type your text here" data-context="error" id="error" />
   ))
 
   .add('big', () => (
@@ -25,14 +25,14 @@ storiesOf('Input', module)
     <div>
       <Input
         placeholder="Username"
-        hasAddonRight
+        data-hasAddonRight
         onBlur={action('Focus lost')}
         onChange={action('Value changed')}
         id="addon"
       />
       <Button
         context="info"
-        isAddonRight
+        data-isAddonRight
         onClick={action('Button clicked')}
       >
         <i className="ion-checkmark-round" /> Submit
@@ -43,8 +43,8 @@ storiesOf('Input', module)
   .add('with inline Icon addon', () => (
     <Input
       placeholder="Input with inline icon addon"
-      hasInnerLeftAddon
-      inlineAddon={<i className="ion-search" />}
+      data-hasInnerLeftAddon
+      data-inlineAddon={<i className="ion-search" />}
       size="big"
     />
   ))
@@ -53,7 +53,7 @@ storiesOf('Input', module)
     <div style={{ marginTop: 70, width: 200 }}>
       <Input
         placeholder="Email address"
-        errorMessage="Invalid email address"
+        data-errorMessage="Invalid email address"
         id="message"
         autoComplete="off"
         onChange={action('Value changed')}
