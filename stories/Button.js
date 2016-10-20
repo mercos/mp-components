@@ -1,5 +1,5 @@
 import React from 'react'
-import {storiesOf, action} from '@kadira/storybook'
+import { storiesOf, action } from '@kadira/storybook'
 
 import Button from '../src/components/Button'
 
@@ -10,17 +10,23 @@ storiesOf('Button', module)
   ))
 
   .add('success', () => (
-    <Button context="success"><i className="ion-checkmark-round" /> Submit</Button>
+    <Button data-context="success"><i className="ion-checkmark-round" /> Submit</Button>
   ))
 
   .add('error', () => (
-    <Button context="error"><i className="ion-close-round" /> Delete</Button>
+    <Button data-context="error"><i className="ion-close-round" /> Delete</Button>
   ))
 
   .add('info', () => (
-    <Button context="info"><i className="ion-information-circled" /> See more</Button>
+    <Button data-context="info"><i className="ion-information-circled" /> See more</Button>
   ))
 
   .add('big', () => (
-    <Button context="info" size="big" className="foo bar"><i className="ion-information-circled" /> See more</Button>
+    <Button
+      data-context="info"
+      size="big"
+      className="foo bar"
+    >
+      <i className="ion-information-circled" /> See more
+    </Button>
   ))
