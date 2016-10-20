@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.8
+- [fix] Fixed 'Unknown prop' warning from Input and Button components
+
 ## 1.3.7
 - [fix] `ToggleableCategory` on hover has a blue color for normal items
 
