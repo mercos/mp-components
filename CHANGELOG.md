@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.3.9
+- [fix] Fixed 'Unknown prop' warning from ToggleableCategory
+
 ## 1.3.8
 - [fix] Fixed 'Unknown prop' warning from Input and Button components
 
