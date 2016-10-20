@@ -9,9 +9,9 @@ class ToggleableCategory extends Component {
       this.props.className
     )
     const contentClasses = cx(
-      styles[`level${this.props.level}`],
+      styles[`level${this.props['data-level']}`],
       styles.content,
-      { [styles.active]: this.props.active }
+      { [styles.active]: this.props['data-active'] }
     )
 
     return (
@@ -31,15 +31,15 @@ class ToggleableCategory extends Component {
 ToggleableCategory.defaultProps = {
   label: '<<null>>',
   className: '',
-  active: false,
-  level: 1,
+  'data-active': false,
+  'data-level': 1,
 }
 
 ToggleableCategory.propTypes = {
   label: PropTypes.string,
   className: PropTypes.string,
-  active: PropTypes.bool,
-  level: PropTypes.number,
+  'data-active': PropTypes.bool,
+  'data-level': PropTypes.number,
   children: PropTypes.any,
 }
 
